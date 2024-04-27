@@ -1,0 +1,4803 @@
+{
+	"info": {
+		"_postman_id": "dcdbc53e-0221-4833-a717-f068366db5ea",
+		"name": "PBP TUBES FINAL",
+		"description": "Tugas Besar Pemrograman Berbasis Platform  \nTopik: Tokopedia  \nAnggota Kelompok:\n\n**1122004 - William Frederick Iversen**\n\n**1122007 - Waluya Juang Husada**\n\n**1122013 - Peter Kurniawan Oktavianus**\n\n**1122018 - Irvan**\n\n**1122026 - Steve Agustinus**\n\n**1122052 - Nathanael Timothius Sutedja**",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32581423",
+		"_collection_link": "https://pbptubes.postman.co/workspace/New-Team-Workspace~09cf9513-cf20-4b0b-b5ae-2bf83705d0b2/collection/32581423-dcdbc53e-0221-4833-a717-f068366db5ea?action=share&source=collection_link&creator=32581423"
+	},
+	"item": [
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Shipment",
+					"item": [
+						{
+							"name": "Change Shipment Address",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/cart/:id_user/shipment_address",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"cart",
+										":id_user",
+										"shipment_address"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "229",
+											"description": "cart for user with id=229"
+										}
+									]
+								},
+								"description": "### Request\n\n- Method: `PUT`\n- Endpoint: `/api/cart/:id_user/change_shipment_address`\n    \n\nThe request will contain the following fields:\n\n1. `\"id_address\"`: This field serves as a unique identifier for the address entry, distinguishing it from other addresses.\n2. `\"no_telephone\"`: This field contains the telephone number associated with the address.\n3. `\"address_label\"`: This field provides a label or name for the address, indicating its purpose or type (e.g., home, office).\n4. `\"address\"`: This field specifies the street address where the location is physically situated.\n5. `\"address_province\"`: Indicates the province or administrative region where the address is located.\n6. `\"address_country\"`: Specifies the country of the address.\n7. `\"address_district\"`: Represents the district or local administrative division within the province.\n8. `\"address_postal_code\"`: Contains the postal code or ZIP code for the address, used for mail delivery and sorting.\n9. `\"notes\"`: Provides space for additional comments or notes related to the address.\n10. `\"pinpoint\"`: Contains geographic coordinates (latitude and longitude) pinpointing the exact location on Earth's surface.\n    \n\n### Response\n\nThe request will contain the following fields:\n\n1. `\"success\"`: This field indicates whether the operation (updating the address) was successful or not. A value of `true` means that the address was updated successfully without encountering any errors.\n2. `\"message\"`: This field provides a message or description related to the outcome of the operation. In this case, it confirms that the address was updated successfully, providing feedback to the user or system about the result of the operation.\n    \n\n<img src=\"https://content.pstmn.io/69d4c539-07f2-46d3-ae2e-b0ef2ad51778/aW1hZ2UucG5n\" width=\"655\" height=\"140\">\n\n<img src=\"https://content.pstmn.io/eb574d13-30ea-4095-b265-78ada62d4891/aW1hZ2UucG5n\" width=\"655\" height=\"140\">\n\n<img src=\"https://content.pstmn.io/3c245733-2fa1-4c38-b67b-2f2ddd82f4b0/aW1hZ2UucG5n\" width=\"684\" height=\"216\">"
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id_address\": \"212239\",\r\n    \"no_telephone\": \"6281292818281\",\r\n    \"address_label\": \"Rumah Raffael\",\r\n    \"address\": \"Jalan Dago\",\r\n    \"address_province\": 32,\r\n    \"address_country\": 73,\r\n    \"address_district\": \"02\",\r\n    \"address_postal_code\": 40254,\r\n    \"notes\": \"\",\r\n    \"pinpoint\": {\r\n        \"latitude\": \"-6.904211\",\r\n        \"longitude\": \"107.605972\"\r\n    },\r\n    \"set_as_primary_address\": true\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api_url}}/api/cart/:id_user/shipment_address",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"api",
+												"cart",
+												":id_user",
+												"shipment_address"
+											],
+											"variable": [
+												{
+													"key": "id_user",
+													"value": "229",
+													"description": "cart for user with id=229"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"success\": true,\r\n    \"message\": \"address updated successfully\"\r\n}"
+								},
+								{
+									"name": "400",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id_address\": \"212239\",\r\n    \"no_telephone\": \"6281292818281\",\r\n    \"address_label\": \"Rumah Raffael\",\r\n    \"address\": \"Jalan Dago\",\r\n    \"address_province\": 32,\r\n    \"address_country\": 73,\r\n    \"address_district\": \"02\",\r\n    \"address_postal_code\": 40254,\r\n    \"notes\": \"\",\r\n    \"pinpoint\": {\r\n        \"latitude\": \"-6.904211\",\r\n        \"longitude\": \"107.605972\"\r\n    }\r\n    //set primary address missing\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api_url}}/api/cart/:id_user/shipment_address",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"api",
+												"cart",
+												":id_user",
+												"shipment_address"
+											],
+											"query": [
+												{
+													"key": "id_user",
+													"value": null,
+													"disabled": true
+												}
+											],
+											"variable": [
+												{
+													"key": "id_user",
+													"value": "229",
+													"description": "cart for user with id=229"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": false,\n    \"message\": \"missing required fields\"\n}"
+								},
+								{
+									"name": "500",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{api_url}}/api/cart/:id_user/shipment/multiple_shipments",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"api",
+												"cart",
+												":id_user",
+												"shipment",
+												"multiple_shipments"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": null,
+													"description": "set the user id",
+													"disabled": true
+												}
+											],
+											"variable": [
+												{
+													"key": "id_user",
+													"value": "229",
+													"description": "cart for user with id=229"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 500,\n    \"message\": \"internal server error\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Add Multiple Shipments",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/cart/:id_user/shipment/multiple_shipments",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"cart",
+										":id_user",
+										"shipment",
+										"multiple_shipments"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "229",
+											"description": "cart for user with id=229"
+										}
+									]
+								},
+								"description": "The Add Multiple Shipments endpoint allows users to add multiple shipment addresses to their shopping cart for a specific user identified by `id_user`. This is particularly useful for orders that require shipping to different locations or multiple recipients.\n\n### Request\n\n- Method: `POST`\n- Endpoint: `/api/cart/:id_user/shipment/add_multiple_shipments`\n    \n\nThe request will contain the following fields:\n\n1. `\"shops\"`: This field contains an array of shops, each representing a different seller or store.\n    - `\"shop_name\"`: The name of the shop or seller.\n    - `\"shop_status\"`: Indicates the status of the shop, such as \"official_store\" in this case.\n    - `\"shop_location\"`: Specifies the location of the shop, such as \"Jakarta Utara\" (North Jakarta) in this example.\n\nWithin each shop, there are details about the products being shipped:\n\n- `\"products\"`: An array of products available in the shop.\n    - `\"id_product\"`: The unique identifier for the product.\n    - `\"product_name\"`: The name or title of the product.\n    - `\"has_variants\"`: Indicates whether the product has variants or options.\n    - `\"variants\"`: An array containing details about product variants if applicable.\n    - `\"price\"`: The price of the product.\n    - `\"notes\"`: Additional notes or comments related to the product.\n    - `\"is_product_checked\"`: A boolean value indicating if the product is selected or checked in the cart.\n    - `\"is_wishlist\"`: A boolean value indicating if the product is in the wishlist.\n\nFor each product, there are one or more shipments associated with it:\n\n- `\"shipments\"`: An array of shipments for the product.\n    \n    - `\"id_address\"`: The unique identifier for the shipping address.\n        \n    - `\"address_title\"`: A title or label for the shipping address (e.g., \"Rumah Utama\" for \"Main House\").\n    - `\"address_name\"`: The name associated with the shipping address.\n    - `\"address\"`: The detailed address including street, city, and region.\n    - `\"customer_telephone_number\"`: The telephone number of the customer associated with the address.\n    - `\"quantity\"`: The quantity of the product to be shipped to this address.\n\n### Response\n\nThe response will contain the following fields:\n\n- `\"success\": true`: This field indicates whether the operation (in this case, adding an address) was successful or not. A value of `true` means that the address was added successfully without any errors.\n    \n- `\"message\": \"Address added successfully\"`: This field provides a message or description related to the operation's outcome. In this case, it confirms that the address was added successfully, providing feedback to the user or system about the result of the operation.\n    \n\n<img src=\"https://content.pstmn.io/24eef562-59de-4037-bd2f-1344c723b585/aW1hZ2UucG5n\" width=\"326\" height=\"436\">\n\n<img src=\"https://content.pstmn.io/51da202b-1646-4ef4-88c5-746c7197c842/aW1hZ2UucG5n\" width=\"322\" height=\"364\">"
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"shops\": [\r\n        {\r\n            \"shop_name\": \"PressPlay\",\r\n            \"shop_status\": \"official_store\",\r\n            \"shop_location\": \"Jakarta Utara\",\r\n            \"products\": [\r\n                {\r\n                    \"id_product\": 91010,\r\n                    \"product_name\": \"AirKeys Wireless Keyboard Bluetooth 2.4ghz Dongle by Press Play\",\r\n                    \"has_variants\": true,\r\n                    \"variants\": [\r\n                        {}\r\n                    ],\r\n                    \"price\": 409000,\r\n                    \"notes\": \"\",\r\n                    \"is_product_checked\": true,\r\n                    \"is_wishlist\": false,\r\n                    \"shipments\": [\r\n                        {\r\n                            \"id_address\": 1,\r\n                            \"address_title\": \"Rumah Utama\",\r\n                            \"address_name\": \"Peter\",\r\n                            \"address\": \"Jalan Pahlawan Kec. Cibeunying Kaler, Kota Bandung Jawa Barat\",\r\n                            \"customer_telephone_number\": \"6281292818281\",\r\n                            \"quantity\": 2\r\n                        },\r\n                        {\r\n                            \"id_address\": 2,\r\n                            \"address_title\": \"Rumah\",\r\n                            \"address_name\": \"Raffael\",\r\n                            \"address\": \"Jalan Dago Coblong, Kota Bandung, Jawa Barat\",\r\n                            \"customer_telephone_number\": \"6281292818281\",\r\n                            \"quantity\": 1\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"shop_name\": \"Anker Indonesia\",\r\n            \"shop_status\": \"official_store\",\r\n            \"shop_location\": \"Jakarta Utara\",\r\n            \"products\": [\r\n                {\r\n                    \"id_product\": 81010,\r\n                    \"product_name\": \"Wall Charger Anker GaNPrime 100W - A2343\",\r\n                    \"has_variants\": false,\r\n                    \"variants\": [\r\n                        {}\r\n                    ],\r\n                    \"price\": 1399000,\r\n                    \"notes\": \"\",\r\n                    \"is_product_checked\": false,\r\n                    \"is_wishlist\": false,\r\n                    \"shipments\": [\r\n                        {\r\n                            \"id_address\": 1,\r\n                            \"address_title\": \"Rumah Utama\",\r\n                            \"address_name\": \"Peter\",\r\n                            \"address\": \"Jalan Pahlawan Kec. Cibeunying Kaler, Kota Bandung Jawa Barat\",\r\n                            \"customer_telephone_number\": \"6281292818281\",\r\n                            \"quantity\": 1\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"shop_name\": \"Anker Indonesia\",\r\n            \"shop_status\": \"official_store\",\r\n            \"shop_location\": \"Jakarta Utara\",\r\n            \"products\": [\r\n                {\r\n                    \"id_product\": 71010,\r\n                    \"product_name\": \"TWS Anker SoundCore R50i - A3949\",\r\n                    \"has_variants\": true,\r\n                    \"variants\": [\r\n                        {\r\n                            \"color\": \"putih\"\r\n                        }\r\n                    ],\r\n                    \"price\": 197000,\r\n                    \"notes\": \"request warna biru\",\r\n                    \"is_product_checked\": true,\r\n                    \"is_wishlist\": false,\r\n                    \"shipments\": [\r\n                        {\r\n                            \"id_address\": 1,\r\n                            \"address_title\": \"Rumah Utama\",\r\n                            \"address_name\": \"Peter\",\r\n                            \"address\": \"Jalan Pahlawan Kec. Cibeunying Kaler, Kota Bandung Jawa Barat\",\r\n                            \"customer_telephone_number\": \"6281292818281\",\r\n                            \"quantity\": 1\r\n                        },\r\n                        {\r\n                            \"id_address\": 3,\r\n                            \"address_title\": \"Kantor\",\r\n                            \"address_name\": \"Michael\",\r\n                            \"address\": \"Jalan Dipatiukur Coblong, Kota Bandung, Jawa Barat\",\r\n                            \"customer_telephone_number\": \"6281282819291\",\r\n                            \"quantity\": 2\r\n                        },\r\n                        {\r\n                            \"id_address\": 4,\r\n                            \"address_title\": \"Joko\",\r\n                            \"address_name\": \"Kantor\",\r\n                            \"address\": \"TKI III Margaasih, Kabupaten Bandung, Jawa Barat\",\r\n                            \"customer_telephone_number\": \"628382919281\",\r\n                            \"quantity\": 1\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api_url}}/api/cart/:id_user/shipment/multiple_shipments",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"api",
+												"cart",
+												":id_user",
+												"shipment",
+												"multiple_shipments"
+											],
+											"variable": [
+												{
+													"key": "id_user",
+													"value": "229",
+													"description": "cart for user with id=229"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Address added successfully\"\n}"
+								},
+								{
+									"name": "400",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"shops\": [\r\n        {\r\n            \"shop_name\": \"PressPlay\",\r\n            //shop_status missing\r\n            \"shop_location\": \"Jakarta Utara\",\r\n            \"products\": [\r\n                {\r\n                    \"id_product\": 91010,\r\n                    \"product_name\": \"AirKeys Wireless Keyboard Bluetooth 2.4ghz Dongle by Press Play\",\r\n                    \"has_variants\": true,\r\n                    \"variants\": [\r\n                        {}\r\n                    ],\r\n                    \"price\": 409000,\r\n                    \"notes\": \"\",\r\n                    \"is_product_checked\": true,\r\n                    \"is_wishlist\": false,\r\n                    \"shipments\": [\r\n                        {\r\n                            \"id_address\": 1,\r\n                            \"address_title\": \"Rumah Utama\",\r\n                            \"address_name\": \"Peter\",\r\n                            \"address\": \"Jalan Pahlawan Kec. Cibeunying Kaler, Kota Bandung Jawa Barat\",\r\n                            \"customer_telephone_number\": \"6281292818281\",\r\n                            \"quantity\": 2\r\n                        },\r\n                        {\r\n                            \"id_address\": 2,\r\n                            \"address_title\": \"Rumah\",\r\n                            \"address_name\": \"Raffael\",\r\n                            \"address\": \"Jalan Dago Coblong, Kota Bandung, Jawa Barat\",\r\n                            \"customer_telephone_number\": \"6281292818281\",\r\n                            \"quantity\": 1\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"shop_name\": \"Anker Indonesia\",\r\n            \"shop_status\": \"official_store\",\r\n            \"shop_location\": \"Jakarta Utara\",\r\n            \"products\": [\r\n                {\r\n                    \"id_product\": 81010,\r\n                    \"product_name\": \"Wall Charger Anker GaNPrime 100W - A2343\",\r\n                    \"has_variants\": false,\r\n                    \"variants\": [\r\n                        {}\r\n                    ],\r\n                    \"price\": 1399000,\r\n                    \"notes\": \"\",\r\n                    \"is_product_checked\": false,\r\n                    \"is_wishlist\": false,\r\n                    \"shipments\": [\r\n                        {\r\n                            \"id_address\": 1,\r\n                            \"address_title\": \"Rumah Utama\",\r\n                            \"address_name\": \"Peter\",\r\n                            \"address\": \"Jalan Pahlawan Kec. Cibeunying Kaler, Kota Bandung Jawa Barat\",\r\n                            \"customer_telephone_number\": \"6281292818281\",\r\n                            \"quantity\": 1\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"shop_name\": \"Anker Indonesia\",\r\n            \"shop_status\": \"official_store\",\r\n            \"shop_location\": \"Jakarta Utara\",\r\n            \"products\": [\r\n                {\r\n                    \"id_product\": 71010,\r\n                    \"product_name\": \"TWS Anker SoundCore R50i - A3949\",\r\n                    \"has_variants\": true,\r\n                    \"variants\": [\r\n                        {\r\n                            \"color\": \"putih\"\r\n                        }\r\n                    ],\r\n                    \"price\": 197000,\r\n                    \"notes\": \"request warna biru\",\r\n                    \"is_product_checked\": true,\r\n                    \"is_wishlist\": false,\r\n                    \"shipments\": [\r\n                        {\r\n                            \"id_address\": 1,\r\n                            \"address_title\": \"Rumah Utama\",\r\n                            \"address_name\": \"Peter\",\r\n                            \"address\": \"Jalan Pahlawan Kec. Cibeunying Kaler, Kota Bandung Jawa Barat\",\r\n                            \"customer_telephone_number\": \"6281292818281\",\r\n                            \"quantity\": 1\r\n                        },\r\n                        {\r\n                            \"id_address\": 3,\r\n                            \"address_title\": \"Kantor\",\r\n                            \"address_name\": \"Michael\",\r\n                            \"address\": \"Jalan Dipatiukur Coblong, Kota Bandung, Jawa Barat\",\r\n                            \"customer_telephone_number\": \"6281282819291\",\r\n                            \"quantity\": 2\r\n                        },\r\n                        {\r\n                            \"id_address\": 4,\r\n                            \"address_title\": \"Joko\",\r\n                            \"address_name\": \"Kantor\",\r\n                            \"address\": \"TKI III Margaasih, Kabupaten Bandung, Jawa Barat\",\r\n                            \"customer_telephone_number\": \"628382919281\",\r\n                            \"quantity\": 1\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api_url}}/api/cart/:id_user/shipment/multiple_shipments",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"api",
+												"cart",
+												":id_user",
+												"shipment",
+												"multiple_shipments"
+											],
+											"variable": [
+												{
+													"key": "id_user",
+													"value": "229",
+													"description": "cart for user with id=229"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": false,\n    \"message\": \"missing required fields\"\n}"
+								},
+								{
+									"name": "500",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api_url}}/api/cart/:id_user/shipment/multiple_shipments",
+											"host": [
+												"{{api_url}}"
+											],
+											"path": [
+												"api",
+												"cart",
+												":id_user",
+												"shipment",
+												"multiple_shipments"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": null,
+													"description": "set the user id",
+													"disabled": true
+												}
+											],
+											"variable": [
+												{
+													"key": "id_user",
+													"value": "229",
+													"description": "cart for user with id=229"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 500,\n    \"message\": \"internal server error\"\n}"
+								}
+							]
+						}
+					],
+					"description": "The Shipment endpoint allows users to manage the shipment details related to their shopping cart. This includes changing the shipment address for an order, adding multiple shipment addresses to the cart, and retrieving shipment information."
+				},
+				{
+					"name": "Cart List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/cart/:id_user",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"cart",
+								":id_user"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id_user",
+									"value": "229",
+									"description": "cart for user with id=229"
+								}
+							]
+						},
+						"description": "This endpoint retrieves the cart details for a specific user identified by the `user_id`. The response will include the shop name, shop status, whether the shop is checked, a list of products including their names, quantities, prices, and notes, and a flag indicating if the items are in the wishlist.\n\n### Request\n\n- Method: `GET`\n- Endpoint: `/api/cart/:id_user`\n    \n\n### Response\n\nThe response will contain the following fields:\n\n- `shop_name` (string): The name of the shop where the products are sourced from.\n- `shop_status` (string): The status of the shop, indicating if it's an official store or not.\n- `is_shop_checked` (boolean): Indicates whether the shop is checked or selected in the context of an action or operation.\n- `quantity` (number): The quantity of products being processed or added.\n- `products` (array): An array containing details of the products available in the shop, with each product having the following fields:\n    - `id_product` (number): The unique identifier for the product.\n    - `product_name` (string): The name or title of the product.\n    - `has_variants` (boolean): Indicates if the product has variants or options.\n    - `variants` (array): An array containing details of the variants available for the product, if any.\n        - `color` (string): The color variant of the product.\n    - `quantity` (number): The quantity of this specific product being processed or added.\n    - `price` (number): The price of the product.\n    - `notes` (string): Additional notes or instructions related to the product.\n    - `is_product_checked` (boolean): Indicates whether the product is checked or selected in the context of an action or operation.\n    - `is_wishlist` (boolean): Indicates if the product is added to the wishlist or not.\n\n<img src=\"https://content.pstmn.io/cfea6ffc-9e9f-4868-a192-03b4ada485b3/aW1hZ2UucG5n\" width=\"785\" height=\"529\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/cart/:id_user",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"cart",
+										":id_user"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "229",
+											"description": "cart for user with id=229"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"shop_name\": \"PressPlay\",\n        \"shop_status\": \"official_store\",\n        \"is_shop_checked\": true,\n        \"products\": [\n            {\n                \"id_product\": 91010,\n                \"product_name\": \"AirKeys Wireless Keyboard Bluetooth 2.4ghz Dongle by Press Play\",\n                \"has_variants\": true,\n                \"variants\": [\n                    {}\n                ],\n                \"quantity\": 1,\n                \"price\": 409000,\n                \"notes\": \"\",\n                \"is_product_checked\": true,\n                \"is_wishlist\": false\n            }\n        ]\n    },\n    {\n        \"shop_name\": \"Anker Indonesia\",\n        \"shop_status\": \"official_store\",\n        \"quantity\": 1,\n        \"is_shop_checked\": true,\n        \"products\": [\n            {\n                \"id_product\": 81010,\n                \"product_name\": \"Wall Charger Anker GaNPrime 100W - A2343\",\n                \"has_variants\": false,\n                \"variants\": [\n                    {}\n                ],\n                \"quantity\": 1,\n                \"price\": 1399000,\n                \"notes\": \"\",\n                \"is_product_checked\": \"false\",\n                \"is_wishlist\": false\n            },\n            {\n                \"id_product\": 71010,\n                \"product_name\": \"TWS Anker SoundCore R50i - A3949\",\n                \"has_variants\": true,\n                \"variants\": [\n                    {\n                        \"color\": \"putih\"\n                    }\n                ],\n                \"quantity\": 2,\n                \"price\": 197000,\n                \"notes\": \"request warna biru\",\n                \"is_product_checked\": true,\n                \"is_wishlist\": false\n            }\n        ]\n    }\n]"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/cart/:id_user",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"cart",
+										":id_user"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "229",
+											"description": "cart for user with id=229"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"error\": {\r\n        \"message\": \"Product Unavailable\",\r\n        \"details\": \"The requested product is either out of stock or has been removed from the catalogue.\"\r\n    }\r\n}\r\n"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/cart/:id_user",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"cart",
+										":id_user"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"description": "set the user id",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "229",
+											"description": "cart for user with id=229"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"message\": \"internal server error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Total Cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/cart/:id_user/total_cart",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"cart",
+								":id_user",
+								"total_cart"
+							],
+							"variable": [
+								{
+									"key": "id_user",
+									"value": "229",
+									"description": "cart for user with id=229"
+								}
+							]
+						},
+						"description": "This endpoint retrieves the total price and total items in the cart for a specific user.\n\n### Request\n\n- Method: `GET`\n- Endpoint: `/api/cart/:user_id/total_cart`\n    \n\n### Response\n\nThe response will contain the following fields:\n\n- `price_total` (number): The total price of all items in the cart.\n- `cart_total` (number): The total quantity of all checked items in the cart.\n    \n\n<img src=\"https://content.pstmn.io/bb2106c6-41e1-4523-a0cf-7e84800fdb40/aW1hZ2UucG5n\" width=\"401\" height=\"266\">\n\n#### Example\n\n``` json\n{\n    \"price_total\": 0,\n    \"cart_total\": 0\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/api/cart/:id_user/total_cart",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"cart",
+										":id_user",
+										"total_cart"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "229",
+											"description": "cart for user with id=229"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"price_total\": 3838000,\n    \"cart_total\": 8\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/cart/:id_user/total_cart",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"cart",
+										":id_user",
+										"total_cart"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"status\": 400,\n        \"message\": \"Invalid Cart Total\",\n        \"details\": \"The cart total does not match the sum of individual product quantities.\"\n    }\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/cart/:id_user/total_cart",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"cart",
+										":id_user",
+										"total_cart"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"description": "set the user id",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "229",
+											"description": "cart for user with id=229"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"message\": \"internal server error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Quantity",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/cart/:id_user/quantity",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"cart",
+								":id_user",
+								"quantity"
+							],
+							"variable": [
+								{
+									"key": "id_user",
+									"value": "229",
+									"description": "cart for user with id=229"
+								}
+							]
+						},
+						"description": "### Request\n\n- Method: PATCH\n- Endpoint: `/api/cart/:id_user/add_quantity`\n    \n\nThe request will contain the following fields:\n\n1. `id_user (number)`: This field represents the unique identifier (ID) of a user who has the cart. It is typically a numeric value used to distinguish one user from another within a system or database.\n2. `id_product (number)`: This field represents the unique identifier (ID) of a product that was updated in the cart. Each product in a system is assigned a specific ID to differentiate it from other products.\n3. `quantity (number)`: This field indicates the total quantity of a specific product that was updated in the cart. It represents the number of units or items of that product that are now in the cart after the update.\n    \n\n### Response\n\nThe response will contain the following fields:\n\n- `success:` This field indicates whether the operation (updating the quantity) was successful or not. A value of `true` means that the quantity was updated successfully without any errors.\n    \n- `message`: This field provides a message or description related to the outcome of the operation. In this case, it confirms that the quantity was updated successfully in the cart, providing feedback to the user or system about the result of the operation.\n    \n\n<img src=\"https://content.pstmn.io/ac887e2d-9213-4543-9b4e-21d6342fe3e8/aW1hZ2UucG5n\" width=\"185\" height=\"109\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_user\": 1001,\r\n    \"product_id\": 81010,\r\n    \"quantity\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/cart/:id_user/quantity",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"cart",
+										":id_user",
+										"quantity"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "229",
+											"description": "cart for user with id=229"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"success\": true,\r\n    \"message\": \"Quantity updated successfully\"\r\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_user\": 1001,\r\n    //missing product id\r\n    \"quantity\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/cart/:id_user/add_quantity",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"cart",
+										":id_user",
+										"add_quantity"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "229",
+											"description": "cart for user with id=229"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"success\": false,\r\n    \"message\": \"missing required fields\"\r\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/cart/:id_user/quantity",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"cart",
+										":id_user",
+										"quantity"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"description": "set the user id",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "229",
+											"description": "cart for user with id=229"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"message\": \"internal server error\"\n}"
+						}
+					]
+				}
+			],
+			"description": "The Cart API Endpoint allows users to manage their shopping cart, including get all the cart's products list, get the cart's total price and quantity, adding quantity, add multiple shipment in cart's checkout, and changing shipment address."
+		},
+		{
+			"name": "Homepage",
+			"item": [
+				{
+					"name": "Top Up & Bill",
+					"item": [
+						{
+							"name": "Add Pulsa",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"telephone_number\" : \"62810319013\",\r\n    \"amount\" : 100000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/topup/pulsa",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"topup",
+										"pulsa"
+									],
+									"query": [
+										{
+											"key": "telephone_number",
+											"value": "\"628231200989\"",
+											"description": "mobile phone number to which the credit will be added",
+											"disabled": true
+										},
+										{
+											"key": "amount",
+											"value": "100000",
+											"description": "the amount of credit to be added",
+											"disabled": true
+										}
+									]
+								},
+								"description": "<img src=\"https://content.pstmn.io/58e97d1c-b52f-4302-8195-051d6663f45a/aW1hZ2UucG5n\" width=\"752\" height=\"265\">\n\nThe \"Add Pulsa\" API allows users to add mobile phone credit (pulsa) to a specified telephone number. This API requires two parameters:\n\n1. **telephone_number**: This parameter specifies the mobile phone number to which the credit (pulsa) will be added.\n    \n2. **amount**: This parameter indicates the amount of credit (pulsa) to be added to the specified telephone number.\n    \n\nUsers can use this API by providing the telephone number and the desired amount of credit they wish to add. The API will then process the request and add the specified credit to the designated phone number."
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"telephone_number\" : \"62810319013\",\r\n    \"amount\" : 100000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "localhost:3000/api/topup/pulsa"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"Pulsa updated successfully\"\n}"
+								},
+								{
+									"name": "402",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"telephone_number\" : \"62810319013\",\r\n    \"amount\" : 99999999 // The balance is insufficient to cover the required amount.\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{api_url}}/api/topup/pulsa"
+									},
+									"status": "Payment Required",
+									"code": 402,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{  \n    \"error\": {\n        \"status\" : 402,\n        \"message\": \"Add Pulsa Failed\",\n        \"details\": \"Your balance is insufficient.\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "PLN Electricity Bill",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_type\" : \"Token Listrik\",\r\n    \"no_meter\" : 298391,\r\n    \"amount\" : 20000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/bill/electricity",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"bill",
+										"electricity"
+									],
+									"query": [
+										{
+											"key": "product_type",
+											"value": "\"Token Listrik\"",
+											"description": "type of electricity product or service associated with the bill payment ",
+											"disabled": true
+										},
+										{
+											"key": "no_meter",
+											"value": "029031",
+											"description": "meter number associated with the electricity account for which the bill payment is intended.",
+											"disabled": true
+										},
+										{
+											"key": "amount",
+											"value": "20000",
+											"description": "amount of the electricity bill to be paid.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "<img src=\"https://content.pstmn.io/63114833-cc80-4101-a78c-61634a1c8846/aW1hZ2UucG5n\" width=\"737\" height=\"253\">\n\nThe \"PLN Electricity Bill\" API enables users to pay their electricity bills conveniently through an automated system. This API requires three parameters:\n\n1. **product_type**: This parameter specifies the type of electricity product or service associated with the bill payment (e.g. \"Token Listrik\", \"Tagihan Listrik\", \"PLN Non-Taglis\").\n    \n2. **no_meter**: This parameter represents the meter number associated with the electricity account for which the bill payment is intended.\n3. **amount**: This parameter indicates the amount of the electricity bill to be paid.\n    \n\nUsers can use this API by providing the product type, meter number, and the amount they wish to pay. The API will process the request and facilitate the payment of the specified electricity bill accordingly."
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"product_type\" : \"Token Listrik\",\r\n    \"no_meter\" : 298391,\r\n    \"amount\" : 20000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "localhost:3000/api/bill/eletricity"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\" : 200,\n    \"success\": true,\n    \"message\": \"PLN electricity bill successfully paid\"\n}"
+								},
+								{
+									"name": "402",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"product_type\" : \"Token Listrik\",\r\n    \"no_meter\" : 298391,\r\n    \"amount\" : 9999999 // The balance is insufficient to cover the required amount.\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{api_url}}/api/bill/electricity"
+									},
+									"status": "Payment Required",
+									"code": 402,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": {\n        \"status\" : 402,\n        \"message\": \"Electricity payment failed\",\n        \"details\": \"Your balance is insufficient.\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"description": "<img src=\"https://content.pstmn.io/95e3a7ae-921c-410c-af25-ead314fa21b0/aW1hZ2UucG5n\" width=\"752\" height=\"265\">\n\nA feature in Tokoepdia's homepage that use for paying bill and buying credit, and others."
+				},
+				{
+					"name": "Choice Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{api_url}}/api/category",
+						"description": "<img src=\"https://content.pstmn.io/083f3773-ce20-49bd-92eb-46f32df0d6ba/aW1hZ2UucG5n\" width=\"770\" height=\"264\">\n\nThe \"Choice Category\" API is a GET API that allows users to retrieve a list of available categories to choose from. This API does not require any parameters; instead, it returns a list of categories that users can select from."
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:3000/api/category"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\" : 200,\r\n    \"message\" : \"success\",\r\n    \"category\" : [\r\n        {\r\n            \"image\": \"path_to_url/makana_kering.png\",\r\n            \"category\": \"Makanan\",\r\n            \"additional_information\": \"Kering\"\r\n        },\r\n        {\r\n            \"image\": \"path_to_url/figure.png\",\r\n            \"category\": \"Figure\",\r\n            \"additional_information\": \"\"\r\n        },\r\n        {\r\n            \"image\": \"path_to_url/tas_selempang_pria.png\",\r\n            \"category\": \"Tas Selempang\",\r\n            \"additional_information\": \"Pria\"\r\n        },\r\n        {\r\n            \"image\": \"path_to_url/flat_shoes.png\",\r\n            \"category\": \"Flat Shoes\",\r\n            \"additional_information\": \"Wanita\"\r\n        },\r\n        {\r\n            \"image\": \"path_to_url/toples.png\",\r\n            \"category\": \"Toples\",\r\n            \"additional_information\": \"\"\r\n        },\r\n        {\r\n            \"image\": \"path_to_url/harddisk_flashdisk.png\",\r\n            \"category\": \"Harddisk & Flashdisk\",\r\n            \"additional_information\": \"\"\r\n        }\r\n    ]\r\n}\r\n"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{api_url}}/api/category"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"status\" : 400,\n        \"message\": \"Category Unavailable\",\n        \"details\": \"The requested category is either changed or has been removed.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Special Discount",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{api_url}}/api/product/special_discount",
+						"description": "<img src=\"https://lh7-us.googleusercontent.com/yB_w2ZqACzRpX5yGglXc4x-3Uf3T5gSyCzbz4dlAVyahTaRPp8NgmH8__H7o8sjyMbzcyUGdml3PQku_CGduZIF4cH1dIpGbatluQkTenMVDQRwvT-WkdHntcIRSC_l5YXkPCw6Bewn0M2_-p2v7BQE\">\n\nThe \"Special Discount\" API is a GET API that provides access to special discount offers or promotions available within a system or platform. This API allows users to retrieve information about ongoing discounts."
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:3000/api/product/special_discount"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{ \r\n    \"status\" : 200,\r\n    \"message\" : \"success\",\r\n    \"discounted_product\" : [\r\n        {\r\n            \"image\" : \"url_to_path/obeng_mouse_pad.png\",\r\n            \"discount_price\" : 275000,\r\n            \"original_price\" : 329000,\r\n            \"discount_percent\" : \"10%\",\r\n            \"additional_information\" : \"Segera Habis\"\r\n        },\r\n        {\r\n            \"image\" : \"url_to_path/movio_deskmat.png\",\r\n            \"discount_price\" : 50000,\r\n            \"original_price\" : 100000,\r\n            \"discount_percent\" : \"50%\",\r\n            \"additional_information\" : \"Segera Habis\"\r\n        },\r\n        {\r\n            \"image\" : \"url_to_path/mangut_ikan_pari_asap.png\",\r\n            \"discount_price\" : 40000,\r\n            \"original_price\" : 50000,\r\n            \"discount_percent\" : \"10%\",\r\n            \"additional_information\" : \"Lagi Diminati\"\r\n        },\r\n        {\r\n            \"image\" : \"url_to_path/tahu_campur_lamongan.png\",\r\n            \"discount_price\" : 23800,\r\n            \"original_price\" : 28000,\r\n            \"discount_percent\" : \"15%\",\r\n            \"additional_information\" : \"Lagi Diminati\"\r\n        },\r\n        {\r\n            \"image\" : \"url_to_path/yava_coconut_banana.png\",\r\n            \"discount_price\" : 44000,\r\n            \"original_price\" : 59800,\r\n            \"discount_percent\" : \"26%\",\r\n            \"additional_information\" : \"Lagi Diminati\"\r\n        } \r\n    ]\r\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{api_url}}/api/product/special_discount"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"status\" : 400,\n        \"message\": \"Discounted Product Unavailable\",\n        \"details\": \"The discounted product is either expired or has been removed.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Trending Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{api_url}}/api/product/trending",
+						"description": "<img src=\"https://content.pstmn.io/e7a8ec6d-2ac7-4ac2-a2f5-134d09e2b17f/aW1hZ2UucG5n\" width=\"1541\" height=\"358\">\n\nThe \"Trending Product\" API is a GET API that enables users to retrieve a list of currently trending or popular products within a specified system or platform. This API does not require any parameters; instead, it returns a curated list of products that are currently gaining attention or popularity based on user interactions, sales, or other metrics."
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:3000/api/product/trending"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\" : 200,\r\n    \"mesage\" : \"success\",\r\n    \"trending_products\" : [\r\n        {\r\n            \"image\" : \"url_to_path/jersey_bola.png\",\r\n            \"title\"  : \"Jersey Bola\",\r\n            \"total_product\" : 146000\r\n        },\r\n        {\r\n            \"image\" : \"url_to_path/kardus_packing.png\",\r\n            \"title\"  : \"Kardus Packing\",\r\n            \"total_product\" : 117000\r\n        },\r\n        {\r\n            \"image\" : \"url_to_path/hdd_1tb.png\",\r\n            \"title\"  : \"Hdd 1tb\",\r\n            \"total_product\" : 129000\r\n        },\r\n        {\r\n            \"image\" : \"url_to_path/cat_choize.png\",\r\n            \"title\"  : \"Cat Choize\",\r\n            \"total_product\" : 75000\r\n        }\r\n    ]\r\n}\r\n"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{api_url}}/api/product/trending"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"status\" : 400,\n        \"message\": \"Trending Product Unavailable\",\n        \"details\": \"The treding product is either expired or has been removed.\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "A landing page for Tokopedia's homepage would typically showcase a vibrant array of featured products, promotions, and categories to entice visitors and guide them towards exploring the platform's offeringsEndFragment"
+		},
+		{
+			"name": "Affiliate",
+			"item": [
+				{
+					"name": "Get Last Viewed Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/affiliate/:user_id/LastViewedProducts",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"affiliate",
+								":user_id",
+								"LastViewedProducts"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "This GET API will enable the user to get the data of the latest viewed products to promote.\n\n<img src=\"https://lh7-us.googleusercontent.com/kCNa1RiR2SvnqU6dXJErTpTKl0NcSpX1HWe3mnik2GR2ZJpiww3hBWM5U_pR0ZqDErQzaeB5HH9s9J9R2lQmoG82RJGW-v1jaLEUD3esAGUdYNU2dFNeQRRmIki8LKa46FgyP2otGiNKHF38Y5AoGwU\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/affiliate/:user_id/LastViewedProducts",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"affiliate",
+										":user_id",
+										"LastViewedProducts"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 200,\r\n    \"message\": \"Success\",\r\n    \"products\": [\r\n        {\r\n            \"product_name\": \"Canon EOS R100 Body / EOS R 100 Kit RF-S 18-45mm Kamera GARANSI RESMI\",\r\n            \"thumbnail_picture\": \"images/canon-eos-r100.png\",\r\n            \"qty\": 2,\r\n            \"price\": 8499000,\r\n            \"initial_price\": null,\r\n            \"shop_name\": \"Focus Nusantara\",\r\n            \"sold_qty\": 9,\r\n            \"star_rating\": 5\r\n        },\r\n        {\r\n            \"product_name\": \"PANASONIC LUMIX DMC G7 KIT 14-42MM / KAMERA PANASONIC G7 KIT 14-42MM\",\r\n            \"thumbnail_picture\": \"images/panasonic-lumix-dmc-g7.png\",\r\n            \"qty\": 9,\r\n            \"price\": 6499000,\r\n            \"initial_price\": 6999000,\r\n            \"shop_name\": \"PHOTOGRAPH\",\r\n            \"sold_qty\": 88,\r\n            \"star_rating\": 5\r\n        },\r\n        {\r\n            \"product_name\": \"Panasonic Lumix DMC-G85 Micro Four Thirds With 14-42mm\",\r\n            \"thumbnail_picture\": \"images/panasonic-lumix-dmc-g85.png\",\r\n            \"qty\": 99,\r\n            \"price\": 10149000,\r\n            \"initial_price\": null,\r\n            \"shop_name\": \"Bursa Kamera Profesional\",\r\n            \"sold_qty\": 17,\r\n            \"star_rating\": 5\r\n        },\r\n        {\r\n            \"product_name\": \"Canon EOS R7 / R 7 Body Only Mirrorless Kamera\",\r\n            \"thumbnail_picture\": \"images/canon-eos-r7.png\",\r\n            \"qty\": 5,\r\n            \"price\": 21849000,\r\n            \"initial_price\": 23999000,\r\n            \"shop_name\": \"ixuspro\",\r\n            \"sold_qty\": 10,\r\n            \"star_rating\": 5\r\n        }\r\n    ]\r\n\r\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/affiliate/:user_id/LastViewedProducts",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"affiliate",
+										":user_id",
+										"LastViewedProducts"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Not Found, List is not found\",\n    \"products\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Product with a link",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/affiliate/ProductWithLink/:link",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"affiliate",
+								"ProductWithLink",
+								":link"
+							],
+							"variable": [
+								{
+									"key": "link",
+									"value": ""
+								}
+							]
+						},
+						"description": "This GET Endpoint will enable the user to search for a specific product to promote through a product link\n\n<img src=\"https://lh7-us.googleusercontent.com/LDuDiAydMPipPW0xMiJv_2m4Q7ZMiC9MGhde_5uOGSyUsOPSFn8faUL9AK70ccznMouTeSZb9rZY1tebC43pal2TseX40sCB0GnfwK2K-U320tTxoRckXZzobx7COsPNCr9bXt8Slo5IKvzzqYWR3-I\" alt=\"\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/affiliate/ProductWithLink/:link",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"affiliate",
+										"ProductWithLink",
+										":link"
+									],
+									"variable": [
+										{
+											"key": "link",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 200,\r\n    \"message\": \"Success\",\r\n    \"product\": {\r\n        \"product_name\": \"halma kayu berwarna anak/chinese checkers for kids\",\r\n        \"thumbnail_picture\": \"images/halma-kayu-berwarna.png\",\r\n        \"qty\": 8,\r\n        \"price\": 85000,\r\n        \"initial_price\": null,\r\n        \"shop_name\": \"SM Kidz\",\r\n        \"sold_qty\": 24,\r\n        \"star_rating\": 4.8\r\n    }\r\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/affiliate/ProductWithLink/:link",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"affiliate",
+										"ProductWithLink",
+										":link"
+									],
+									"variable": [
+										{
+											"key": "link",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 200,\r\n    \"message\": \"Not Found, Invalid Link\",\r\n    \"product\": null\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Generate Promotion Links",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/affiliate/:user_id/promotionLinks/?link={product_link}",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"affiliate",
+								":user_id",
+								"promotionLinks",
+								""
+							],
+							"query": [
+								{
+									"key": "link",
+									"value": "{product_link}"
+								}
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "This POST endpoint will enable the system to generate an affiliated link for the user across different social medias.\n\n<img src=\"https://lh7-us.googleusercontent.com/w5Nj_ptfeFnnZZ26mJPlh-FJiCwcRnFIAfDx2LoPbSYwScPL291wInkgIg1ss0DsR42z-6jXqBN7F__9bci2fiCyw-jv5zEntAsHmChPo_fR_XwK3l5WhPvC-fzVNusSxHKl3i_1z01_SKXHpLb9AGA\" alt=\"\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/affiliate/:user_id/promotionLinks/?link={product_link}",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"affiliate",
+										":user_id",
+										"promotionLinks",
+										""
+									],
+									"query": [
+										{
+											"key": "link",
+											"value": "{product_link}"
+										}
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 200,\r\n    \"message\": \"Success\",\r\n    \"product\": {\r\n        \"product_name\": \"Canon EOS R100 Body / EOS R 100 Kit RF-S 18-45mm Kamera GARANSI RESMI\",\r\n        \"link_instagram\": \"https://tokopedia.link/Uxsx5Uve5Ib\",\r\n        \"link_tiktok\": \"https://tokopedia.link/MiM1zkca5Ib\",\r\n        \"link_youtube\": \"https://tokopedia.link/twa4xVfq5Ib\",\r\n        \"link_facebook\": \"https://tokopedia.link/YQE9Oxfq5Ib\",\r\n        \"link_twitter\": \"https://tokopedia.link/W7R926eq5Ib\",\r\n        \"link_blog\": \"https://tokopedia.link/uKftBMeq5Ib\",\r\n        \"link_whatsapp\": \"https://tokopedia.link/VrMGQueq5Ib\",\r\n        \"link_line\": \"https://tokopedia.link/eSZcVgeq5Ib\",\r\n        \"link_lainnya\": \"https://tokopedia.link/8yjii9Ae5Ib\"\r\n    }\r\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/affiliate/:user_id/promotionLinks/?link={product_link}",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"affiliate",
+										":user_id",
+										"promotionLinks",
+										""
+									],
+									"query": [
+										{
+											"key": "link",
+											"value": "{product_link}"
+										}
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 400,\r\n    \"message\": \"Error, Link is Invalid\",\r\n    \"product\": null\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Make Withdrawals",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/affiliate/withdrawals/:user_id?amount={amount_withdrawal}",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"affiliate",
+								"withdrawals",
+								":user_id"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "{amount_withdrawal}"
+								}
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "This POST endpoint will allow the user to make a withdrawal and save the amount to the system's history.\n\n<img src=\"https://lh7-us.googleusercontent.com/5Rdw8nM7iKPOkWz20EBiCqw_ujvf9FZlJK0PC1EnWopt7ForA064DkjYmPCV1QSixcrg7_C_mphKpvsaHRo0_1EUglFfld9IXbQTY32NHX8k0sQcoN9OdxhxMmTe8ceJHMxR2BDvtY00SCg8R7-rbMM\" alt=\"\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/affiliate/withdrawals/:user_id?amount={amount_withdrawal}",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"affiliate",
+										"withdrawals",
+										":user_id"
+									],
+									"query": [
+										{
+											"key": "amount",
+											"value": "{amount_withdrawal}"
+										}
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 200,\r\n    \"message\": \"Successfully Withdraw funds\",\r\n    \"user_id\": \"{user_id}\",\r\n    \"amount\": \"{amount_withdrawal}\"\r\n}"
+						},
+						{
+							"name": "403",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/affiliate/withdrawals/:user_id?amount={amount_withdrawal}",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"affiliate",
+										"withdrawals",
+										":user_id"
+									],
+									"query": [
+										{
+											"key": "amount",
+											"value": "{amount_withdrawal}"
+										}
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 403,\r\n    \"message\": \"Error, Insufficient Funds\",\r\n    \"user_id\": \"{user_id}\",\r\n    \"amount\": \"{amount_withdrawal}\"\r\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/affiliate/withdrawals/:user_id?amount={amount_withdrawal}",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"affiliate",
+										"withdrawals",
+										":user_id"
+									],
+									"query": [
+										{
+											"key": "amount",
+											"value": "{amount_withdrawal}"
+										}
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"Error, User not Found\",\n    \"user_id\": \"{user_id}\",\n    \"amount\": \"{amount_withdrawal}\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Transactions Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/affiliate/AllTransactions/:user_id?range={range_days}",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"affiliate",
+								"AllTransactions",
+								":user_id"
+							],
+							"query": [
+								{
+									"key": "range",
+									"value": "{range_days}"
+								}
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "This GET endpoint will allow the user to be able to view how many people have clicked on their links or how many people have bought the items they promoted with their links\n\n<img src=\"https://lh7-us.googleusercontent.com/565fJk5FgxxcFT2fbSTcEjM-ADJLUTJMxWixOSEGKskW2Z4tEq_IBUZFMl7En5KjkETbpJZCqJoA5BFx-bzgoPIgWltz0RB89ruyJ3MRMRfowjR-81vs1ENSkynhMOkd-SsL26cFB_KIz3eIPapif-A\" alt=\"\">\n\n<img src=\"https://lh7-us.googleusercontent.com/wLOISBiKgFIOGcB1WvMt9NY2Qa9bDo0EoOUd4K6Thxmc3ZGWNLDx-m6JXgaZ_kYIhJXNuM8H13fh_-fkTuflr0PSEd1roKItWpHyIUyimKdtw6WTXduf-c79_n4EUsGocWyeamkzSbog1GNOMrcqmZg\" alt=\"\">\n\n<img src=\"https://lh7-us.googleusercontent.com/TNGP666x2qM2KLfFrtFSoHIHH0yuSN17uzkMSQLQly23yZI-RHy4-Yn7Ai5g02HTwtG5WoP75yb68w4YQc3DqKMoL8feSaNFnhP5IKi_bFcmfMTY17mx9Jzd5DPsk0Hmvh5nyoFQS8pGvfEFVhRYYJY\" alt=\"\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/affiliate/getAllTransactions/:user_id?range={range_days}",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"affiliate",
+										"getAllTransactions",
+										":user_id"
+									],
+									"query": [
+										{
+											"key": "range",
+											"value": "{range_days}"
+										}
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 200,\r\n    \"message\": \"Success\",\r\n    \"range-days\": \"{range_days}\",\r\n    \"transactions\": [\r\n        {\r\n            \"id\": 1,\r\n            \"jenis-transaksi\": \"Komisi Kunjungan Produk\",\r\n            \"nominal\": 50,\r\n            \"tanggal\": \"2022-09-30 01:01\",\r\n            \"keterangan\": \"1 Total Kunjungan\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"jenis-transaksi\": \"Komisi Kunjungan Produk\",\r\n            \"nominal\": 50,\r\n            \"tanggal\": \"2022-10-03 01:01\",\r\n            \"keterangan\": \"2 Total Kunjungan\"\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"jenis-transaksi\": \"Komisi Kunjungan Produk\",\r\n            \"nominal\": 150,\r\n            \"tanggal\": \"2022-10-06 01:02\",\r\n            \"keterangan\": \"7 Total Kunjungan\"\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"jenis-transaksi\": \"Komisi Kunjungan Produk\",\r\n            \"nominal\": 250,\r\n            \"tanggal\": \"2022-10-07 01:02\",\r\n            \"keterangan\": \"9 Total Kunjungan\"\r\n        },\r\n        {\r\n            \"id\": 5,\r\n            \"jenis-transaksi\": \"Komisi Kunjungan Produk\",\r\n            \"nominal\": 50,\r\n            \"tanggal\": \"2022-10-11 01:01\",\r\n            \"keterangan\": \"4 Total Kunjungan\"\r\n        },\r\n        {\r\n            \"id\": 6,\r\n            \"jenis-transaksi\": \"Detail Komisi Penjualan\",\r\n            \"nominal\": 4000,\r\n            \"tanggal\": \"2022-11-15 10:34\",\r\n            \"keterangan\": \"TV Box 4K Android H96 MAX 4GB 64GB 32GB 16GB Bluetooth Mira Dual Wifi-2GB-16GB V11, Remot+Keyboard - (1 produk terjual)\"\r\n        },\r\n        {\r\n            \"id\": 7,\r\n            \"jenis-transaksi\": \"Detail Komisi Penjualan\",\r\n            \"nominal\": 3500,\r\n            \"tanggal\": \"2022-11-16 13:17\",\r\n            \"keterangan\": \"TV Box 4K Android H96 MAX 4GB 64GB 32GB 16GB Bluetooth Mira Dual Wifi-2GB-16GB V11, Remot+Keyboard - (1 produk terjual)\"\r\n        }\r\n    ]\r\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/affiliate/getAllTransactions/:user_id?range={range_days}",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"affiliate",
+										"getAllTransactions",
+										":user_id"
+									],
+									"query": [
+										{
+											"key": "range",
+											"value": "{range_days}"
+										}
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 400,\r\n    \"message\": \"Error, key parameter incomplete\",\r\n    \"range-days\": \"{range_days}\",\r\n    \"transactions\": null\r\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/affiliate/getAllTransactions/:user_id?range={range_days}",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"affiliate",
+										"getAllTransactions",
+										":user_id"
+									],
+									"query": [
+										{
+											"key": "range",
+											"value": "{range_days}"
+										}
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"Error, Data not Found\",\n    \"range-days\": \"{range_days}\",\n    \"transactions\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get Review",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/product/:id_product/review?sort=\"latest\"&per-page=3&page=1&retrieve-all=false&filter[rating]=[]&filter[topic]=[]",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								":id_product",
+								"review"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "\"latest\"",
+									"description": "Sort result by attribute. Add - prefix to attribute for descending sort. Options: \"latest\", \"most-helpful\", \"ratings\"."
+								},
+								{
+									"key": "per-page",
+									"value": "3",
+									"description": "Set number of items each page. Default value: 10"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Set page of pagination. Default value: 1"
+								},
+								{
+									"key": "retrieve-all",
+									"value": "false",
+									"description": "True to return all items"
+								},
+								{
+									"key": "filter[rating]",
+									"value": "[]",
+									"description": "Filter by rating. Options: 1, 2, 3, 4, 5."
+								},
+								{
+									"key": "filter[topic]",
+									"value": "[]",
+									"description": "Filter by topic. Options: 0, 1, 2, 3, 4, 5\n0 = Kualitas Barang\n1 = Pelayanan Penjual\n2 = Kemasan Barang\n3 = Sesuai Deskripsi\n4 = Pengiriman\n5 = Harga Barang."
+								}
+							],
+							"variable": [
+								{
+									"key": "id_product",
+									"value": "150",
+									"description": "Product ID"
+								}
+							]
+						},
+						"description": "Get product's reviews including:\n\n- average product rating\n- comments and replies (text and images)\n    \n\nComments can be sorted by using one of following attribute into \"sort\" param:\n\n- Latest comment (\"latest\")\n- Most helpful (\"most-helpful\")\n- Ratings (\"ratings\")\n    \n\nFilters that can be applied :\n\n- By ratings\n- By topics\n    \n\n<img src=\"https://content.pstmn.io/17322321-3e52-44fc-9625-c2ca8bc132c5/U2NyZWVuc2hvdCAyMDI0LTA0LTI1IDE1MDM1Mi5wbmc=\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/api/product/:id_product/review?sort=\"latest\"&per-page=3&page=1&retrieve-all=false&filter[rating]=[]&filter[topic]=[]",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product",
+										":id_product",
+										"review"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "\"latest\"",
+											"description": "Sort result by attribute. Add - prefix to attribute for descending sort. Options: \"latest\", \"most-helpful\", \"ratings\"."
+										},
+										{
+											"key": "per-page",
+											"value": "3",
+											"description": "Set number of items each page. Default value: 10"
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "Set page of pagination. Default value: 1"
+										},
+										{
+											"key": "retrieve-all",
+											"value": "false",
+											"description": "True to return all items"
+										},
+										{
+											"key": "filter[rating]",
+											"value": "[]",
+											"description": "Filter by rating. Options: 1, 2, 3, 4, 5."
+										},
+										{
+											"key": "filter[topic]",
+											"value": "[]",
+											"description": "Filter by topic. Options: 0, 1, 2, 3, 4, 5\n0 = Kualitas Barang\n1 = Pelayanan Penjual\n2 = Kemasan Barang\n3 = Sesuai Deskripsi\n4 = Pengiriman\n5 = Harga Barang."
+										}
+									],
+									"variable": [
+										{
+											"key": "id_product",
+											"value": "150",
+											"description": "Product ID"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"avg_rating\": 5,\n        \"rating_count\": 68,\n        \"comment_count\": 39,\n        \"comments\": [\n            {\n                \"id_comment\": 1242,\n                \"timestamp\": \"2024-04-24 15:03:11\",\n                \"variant\": \"COLORFUL I_GAME\",\n                \"sender\": {\n                    \"id_user\": 100,\n                    \"is_seller\": false,\n                    \"username\": \"M***o\"\n                },\n                \"message_content\": \"so far OK, tq to make a dream come true, A+ sellerð\\u009f\\u0098\\u008d\",\n                \"imgs\": [],\n                \"helped_count\": 0,\n                \"replies\": [\n                    {\n                        \"id_comment\": 1574,\n                        \"timestamp\": \"2024-04-24 18:02:52\",\n                        \"sender\": {\n                            \"id_user\": 12,\n                            \"is_seller\": true,\n                            \"username\": \"Telu Digital\"\n                        },\n                        \"message_content\": \"Terima kasih telah berbelanja di Telu Digital. Bagikan link toko kami www.tokopedia.com/teludigital kepada teman-teman kamu. Jangan lupa follow toko kami untuk tahu update terbaru tentang stok dan produk yang kami tawarkan.\"\n                    }\n                ]\n            },\n            {\n                \"id_comment\": 501,\n                \"timestamp\": \"2024-01-24 14:11:44\",\n                \"variant\": \"ZOTAC\",\n                \"sender\": {\n                    \"id_user\": 121,\n                    \"is_seller\": false,\n                    \"username\": \"s***y\"\n                },\n                \"message_content\": \"Mantabs Berfungsi dengan baik dan Packing lumayan baik, Puas. Thanks\",\n                \"imgs\": [],\n                \"helped_count\": 0,\n                \"replies\": [\n                    {\n                        \"id_comment\": 521,\n                        \"timestamp\": \"2024-01-24 16:12:00\",\n                        \"sender\": {\n                            \"id_user\": 12,\n                            \"is_seller\": true,\n                            \"username\": \"Telu Digital\"\n                        },\n                        \"message_content\": \"Terima kasih telah berbelanja di Telu Digital. Bagikan link toko kami www.tokopedia.com/teludigital kepada teman-teman kamu. Jangan lupa follow toko kami untuk tahu update terbaru tentang stok dan produk yang kami tawarkan.\"\n                    }\n                ]\n            },\n            {\n                \"id_comment\": 391,\n                \"timestamp\": \"2024-01-23 11:10:01\",\n                \"variant\": \"ZOTAC\",\n                \"sender\": {\n                    \"id_user\": 22,\n                    \"is_seller\": false,\n                    \"username\": \"Wahyoe\"\n                },\n                \"message_content\": \"MantuLL BossKu.. jangan ragu beli d sini.. mantap pokoknya.. Trims BossKu..\",\n                \"imgs\": [\n                    \"data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\",\n                    \"data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"\n                ],\n                \"helped_count\": 0,\n                \"replies\": [\n                    {\n                        \"id_comment\": 400,\n                        \"timestamp\": \"2024-01-23 12:44:30\",\n                        \"sender\": {\n                            \"id_user\": 12,\n                            \"is_seller\": true,\n                            \"username\": \"Telu Digital\"\n                        },\n                        \"message_content\": \"Terima kasih telah berbelanja di Telu Digital. Bagikan link toko kami www.tokopedia.com/teludigital kepada teman-teman kamu. Jangan lupa follow toko kami untuk tahu update terbaru tentang stok dan produk yang kami tawarkan.\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/product/:id_product/review?sort=\"latest\"&per-page=3&page=1&retrieve-all=false&filter[rating]=[]&filter[topic]=[]",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										":id_product",
+										"review"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "\"latest\"",
+											"description": "Sort result by attribute. Add - prefix to attribute for descending sort. Options: \"latest\", \"most-helpful\", \"ratings\"."
+										},
+										{
+											"key": "per-page",
+											"value": "3",
+											"description": "Set number of items each page. Default value: 10"
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "Set page of pagination. Default value: 1"
+										},
+										{
+											"key": "retrieve-all",
+											"value": "false",
+											"description": "True to return all items"
+										},
+										{
+											"key": "filter[rating]",
+											"value": "[]",
+											"description": "Filter by rating. Options: 1, 2, 3, 4, 5."
+										},
+										{
+											"key": "filter[topic]",
+											"value": "[]",
+											"description": "Filter by topic. Options: 0, 1, 2, 3, 4, 5\n0 = Kualitas Barang\n1 = Pelayanan Penjual\n2 = Kemasan Barang\n3 = Sesuai Deskripsi\n4 = Pengiriman\n5 = Harga Barang."
+										}
+									],
+									"variable": [
+										{
+											"key": "id_product",
+											"value": "9999999999999999999999999",
+											"description": "Product ID"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"product not found\"\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/product/:id_product/review?sort=\"latest\"&per-page=3&page=1&retrieve-all=false&filter[rating]=[]&filter[topic]=[]",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										":id_product",
+										"review"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "\"latest\"",
+											"description": "Sort result by attribute. Add - prefix to attribute for descending sort. Options: \"latest\", \"most-helpful\", \"ratings\"."
+										},
+										{
+											"key": "per-page",
+											"value": "3",
+											"description": "Set number of items each page. Default value: 10"
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "Set page of pagination. Default value: 1"
+										},
+										{
+											"key": "retrieve-all",
+											"value": "false",
+											"description": "True to return all items"
+										},
+										{
+											"key": "filter[rating]",
+											"value": "[]",
+											"description": "Filter by rating. Options: 1, 2, 3, 4, 5."
+										},
+										{
+											"key": "filter[topic]",
+											"value": "[]",
+											"description": "Filter by topic. Options: 0, 1, 2, 3, 4, 5\n0 = Kualitas Barang\n1 = Pelayanan Penjual\n2 = Kemasan Barang\n3 = Sesuai Deskripsi\n4 = Pengiriman\n5 = Harga Barang."
+										}
+									],
+									"variable": [
+										{
+											"key": "id_product",
+											"value": "150",
+											"description": "Product ID"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"message\": \"internal server error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Product to Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_product\": 150,\r\n    \"variants\": \r\n    {\r\n        \"tipe\": \"ASUS TUF GAMING\"\r\n    },\r\n    \"notes\": \"Tolong dipacking dengan rapi\",\r\n    \"amount\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/user/:id_user/cart",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								":id_user",
+								"cart"
+							],
+							"variable": [
+								{
+									"key": "id_user",
+									"value": ""
+								}
+							]
+						},
+						"description": "Add the product to user's cart when user clicks \"+ Keranjang\" button.\n\nRequired field:\n\n- id_product: Product ID\n    \n- variants (if the product has variants)\n- amount\n    \n\n<img src=\"https://lh7-us.googleusercontent.com/m6i5HPQaDrLhXlhGPSITY_Vc2iG6AfMlET_PRywSvrPgISXKQ9VFLA-U-lGAh1AhvPiLzwP8XnIh32wJPde0K1s4AekY4XtIsDRD-ZZ30-20ZgIkvsjLT9hNqDG3ErCf7Fnog-Zheb_ax-JsVpRBv74\" width=\"322\" height=\"517\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_product\": 150,\r\n    \"variants\": \r\n    {\r\n        \"tipe\": \"ASUS TUF GAMING\"\r\n    },\r\n    \"notes\": \"Tolong dipacking dengan rapi\",\r\n    \"amount\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/user/:id_user/cart",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										":id_user",
+										"cart"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "484",
+											"description": "User ID"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n\t\"status\": 200,\r\n\t\"message\": \"success\"\r\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_product\": 150,\r\n    \"variants\": \r\n    {\r\n        \"tipe\": \"ASUS TUF GAMING\"\r\n    },\r\n    \"notes\": \"Tolong dipacking dengan rapi\",\r\n    \"amount\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/user/:id_user/cart",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										":id_user",
+										"cart"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "484",
+											"description": "User ID"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n\t\"status\": 500,\r\n\t\"message\": \"internal server error\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove from Wishlist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id_product\": \"150\",\r\n\t\"variant\": [\r\n\t\t{\r\n\t\t\t\"tipe\": \"ASUS TUF GAMING\"\r\n\t\t}\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/:id_user/wishlist",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								":id_user",
+								"wishlist"
+							],
+							"variable": [
+								{
+									"key": "id_user",
+									"value": "484",
+									"description": "User ID"
+								}
+							]
+						},
+						"description": "Remove the selected product from user's wishlist when the active heart button clicked.\n\nRequired fields:\n\n- id_product: Product ID\n    \n- product variants (if the product has variants)\n    \n\n<img src=\"https://lh7-us.googleusercontent.com/s2OPP0aVnI8xWQBYRKZuTEm0qtz_mA3O4Y1A8JMnQ_0bVgPVBOFlNX657RsIKV26ZMgNsmPx2vVLOrXTch77_kkUJfnT0xLKFHmZQ_3HY3us5zsCfWDXwV0-_UhT99nxEY9vF_Nub_laMalNmbZzqHY\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id_product\": \"150\",\r\n\t\"variant\": [\r\n\t\t{\r\n\t\t\t\"tipe\": \"ASUS TUF GAMING\"\r\n\t\t}\r\n\t]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/:id_user/wishlist",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										":id_user",
+										"wishlist"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "484",
+											"description": "User ID"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n  \"status\": 200,\r\n  \"message\": \"success\"\r\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id_product\": \"150\",\r\n\t\"variant\": [\r\n\t\t{\r\n\t\t\t\"tipe\": \"ASUS TUF GAMING\"\r\n\t\t}\r\n\t]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/:id_user/wishlist",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										":id_user",
+										"wishlist"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "484",
+											"description": "User ID"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n  \"status\": 500,\r\n  \"message\": \"internal server error\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Product Review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"seller\": \"ACE Indonesia\",\r\n    \"received_date\": \"14 Feb 2024, 11:24 WIB\",\r\n    \"product\": {\r\n        \"product_id\": 24,\r\n        \"name\": \"Krisbow Gembok Dengan Alarm - Hitam\",\r\n        \"quality_rating\": 5,\r\n        \"review\": \"Sangat Baik\"\r\n    },\r\n    \"photos\": [\r\n        \"photo1.jpg\",\r\n        \"photo2.jpg\"\r\n    ],\r\n    \"show_as\": \"show profile\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/product/:id_product/review",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								":id_product",
+								"review"
+							],
+							"variable": [
+								{
+									"key": "id_product",
+									"value": ""
+								}
+							]
+						},
+						"description": "This request is aimed to submit a product review to the system. The review details include the seller's name, the date the order was received, product details (including product ID, product name, quality rating, and review text), and instructions on how to display it. The request is sent using the HTTP POST method to the `/api/reviews` endpoint. Authorization is performed by including a token in the request header.\n\n<img src=\"https://lh7-us.googleusercontent.com/k0rMAKa10UsaTcrHSmCzm6Pelp5mSmYyJU1ax9etyUxlqyCsgn-mIPJ4lZHZXI2tToW1AeHPCf4wKOx17NdRvSiyficcL-hrsoMoto2dJA2BXn-0aU11z6cJzEoaf2K4JLhAAE1m-bn-TUPtO41Vdbw\" alt=\"\">\n\n  \n  \n\n- The `seller` field specifies the seller's name (e.g., ACE Indonesia).\n    \n- The `received_date` field indicates the date the order was received (e.g., 14 Feb 2024, 11:24 WIB).\n    \n- The `product_id` field denotes the ID of the product being reviewed (e.g., 24).\n    \n- The `name` field represents the name of the product (e.g., Krisbow Gembok Dengan Alarm - Black).\n    \n- The `quality_rating` field allows the user to rate the quality of the product (1-5).\n    \n- The `review` field contains the textual review provided by the user (e.g., Excellent).\n    \n- The `show_as` field specifies how the review should be displayed. Choose \"show profile\" to display the profile to all users, or choose \"hide profile\" to display the profile only to the seller.\n    \n- Users can also include multiple photos of the product by attaching them as multipart/form-data with keys `photo_1`, `photo_2`, `photo_3`, and so on. These photo fields are optional."
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"seller\": \"ACE Indonesia\",\r\n    \"received_date\": \"14 Feb 2024, 11:24 WIB\",\r\n    \"product\": {\r\n        \"product_id\": 24,\r\n        \"name\": \"Krisbow Gembok Dengan Alarm - Hitam\",\r\n        \"quality_rating\": 5,\r\n        \"review\": \"Sangat Baik\"\r\n    },\r\n    \"show_as\": \"show profile\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/product/:id_product/review",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										":id_product",
+										"review"
+									],
+									"variable": [
+										{
+											"key": "id_product",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Review added successfully.\",\n    \"review\": {\n        \"review_id\": 123,\n        \"seller\": \"ACE Indonesia\",\n        \"received_date\": \"14 Feb 2024, 11:24 WIB\",\n        \"product\": {\n            \"product_id\": 24,\n            \"name\": \"Krisbow Gembok Dengan Alarm - Hitam\",\n            \"quality_rating\": 5,\n            \"review\": \"Sangat Baik\"\n        },\n        \"photos\": [\n            \"photo1.jpg\",\n            \"photo2.jpg\"\n        ],\n        \"show_as\": \"show profile\"\n    }\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"seller\": \"ACE Indonesia\",\r\n    \"received_date\": \"14 Feb 2024, 11:24 WIB\",\r\n    \"product\": {\r\n        \"product_id\": 24,\r\n        \"name\": \"Krisbow Gembok Dengan Alarm - Hitam\",\r\n        \"quality_rating\": 5,\r\n        \"review\": \"Sangat Baik\"\r\n    },\r\n    \"show_as\": \"show profile\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/product/:id_product/review",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										":id_product",
+										"review"
+									],
+									"variable": [
+										{
+											"key": "id_product",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 404,\r\n    \"error\": \"Review not found.\",\r\n    \"message\": \"The review with ID 123 does not exist.\"\r\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"seller\": \"ACE Indonesia\",\r\n    \"received_date\": \"14 Feb 2024, 11:24 WIB\",\r\n    \"product\": {\r\n        \"product_id\": 24,\r\n        \"name\": \"Krisbow Gembok Dengan Alarm - Hitam\",\r\n        \"quality_rating\": 5,\r\n        \"review\": \"Sangat Baik\"\r\n    },\r\n    \"show_as\": \"show profile\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/product/:id_product/review",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										":id_product",
+										"review"
+									],
+									"variable": [
+										{
+											"key": "id_product",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"message\": \"An unexpected error occurred while processing your request. Please try again later.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit Review",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"seller\": \"ACE Indonesia\",\r\n    \"received_date\": \"14 Feb 2024, 11:24 WIB\",\r\n    \"product\": {\r\n        \"product_id\": 24,\r\n        \"name\": \"Krisbow Gembok Dengan Alarm - Hitam\",\r\n        \"quality_rating\": 5,\r\n        \"review\": \"Sangat Baik\"\r\n    },\r\n    \"photos\": [\r\n        \"photo1.jpg\",\r\n        \"photo2.jpg\"\r\n    ],\r\n    \"show_as\": \"show profile\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/reviews/:review_id",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								":review_id"
+							],
+							"variable": [
+								{
+									"key": "review_id",
+									"value": ""
+								}
+							]
+						},
+						"description": "This API endpoint allows users to edit an existing review. Users can update the review details including the seller, received date, product details, attached photos, and how the review should be displayed. The review to be edited is identified by `:review_id` parameter in the URL path.\n\nUpon receiving a valid request, the server will update the review information with the provided data. The updated review will then be reflected in the system. The response will indicate the success or failure of the operation, along with any relevant details.\n\n<img src=\"https://content.pstmn.io/101bfe14-b5fd-4833-bf65-7e0507065920/aW1hZ2UucG5n\" alt=\"\" height=\"318\" width=\"713\">\n\n  \n  \n\n<img src=\"https://content.pstmn.io/c35ec966-5eaa-45ad-ac32-56970fe3d3b6/aW1hZ2UucG5n\" alt=\"\" height=\"451\" width=\"716\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"seller\": \"ACE Indonesia\",\r\n  \"received_date\": \"14 Feb 2024, 11:24 WIB\",\r\n  \"product\": {\r\n    \"product_id\": 24,\r\n    \"name\": \"Krisbow Gembok Dengan Alarm - Hitam\",\r\n    \"quality_rating\": 5,\r\n    \"review\": \"Sangat Baik\"\r\n  },\r\n  \"photos\": [\r\n    \"photo1.jpg\",\r\n    \"photo2.jpg\"\r\n  ],\r\n  \"show_as\": \"show profile\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/reviews/:review_id",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"reviews",
+										":review_id"
+									],
+									"variable": [
+										{
+											"key": "review_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Review updated successfully.\",\n    \"updated_review\": {\n        \"review_id\": 123,\n        \"seller\": \"ACE Indonesia\",\n        \"received_date\": \"14 Feb 2024, 11:24 WIB\",\n        \"product\": {\n            \"product_id\": 24,\n            \"name\": \"Krisbow Gembok Dengan Alarm - Hitam\",\n            \"quality_rating\": 5,\n            \"review\": \"Sangat Baik\"\n        },\n        \"photos\": [\n            \"photo1.jpg\",\n            \"photo2.jpg\"\n        ],\n        \"show_as\": \"show profile\"\n    }\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"seller\": \"ACE Indonesia\",\r\n  \"received_date\": \"14 Feb 2024, 11:24 WIB\",\r\n  \"product\": {\r\n    \"product_id\": 24,\r\n    \"name\": \"Krisbow Gembok Dengan Alarm - Hitam\",\r\n    \"quality_rating\": 5,\r\n    \"review\": \"Sangat Baik\"\r\n  },\r\n  \"photos\": [\r\n    \"photo1.jpg\",\r\n    \"photo2.jpg\"\r\n  ],\r\n  \"show_as\": \"show profile\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/reviews/:review_id",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"reviews",
+										":review_id"
+									],
+									"variable": [
+										{
+											"key": "review_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"error\": \"Review not found.\",\n    \"message\": \"The review with ID 123 does not exist.\"\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"seller\": \"ACE Indonesia\",\r\n  \"received_date\": \"14 Feb 2024, 11:24 WIB\",\r\n  \"product\": {\r\n    \"product_id\": 24,\r\n    \"name\": \"Krisbow Gembok Dengan Alarm - Hitam\",\r\n    \"quality_rating\": 5,\r\n    \"review\": \"Sangat Baik\"\r\n  },\r\n  \"photos\": [\r\n    \"photo1.jpg\",\r\n    \"photo2.jpg\"\r\n  ],\r\n  \"show_as\": \"show profile\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/reviews/:review_id",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"reviews",
+										":review_id"
+									],
+									"variable": [
+										{
+											"key": "review_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"message\": \"An unexpected error occurred while processing your request. Please try again later.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Report",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_user\": 484,\r\n    \"id_category\": 2,\r\n\t\t\"reason\": {\r\n\t\t\t\"message\": \"Standar untuk barang asli dan normal harusnya satu juta lebih murah dari harga sekarang\",\r\n\t\t\t\"sub-category\": 2,\r\n\t\t\t\"links\": [],\r\n\t\t\t\"imgs\": [\r\n\t\t\t\t\"data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\",\r\n\t\t\t\t\"data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\",\r\n\t\t\t\t\"data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"\r\n\t\t\t]\r\n\t\t},\r\n    \"is_data_authentic\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/product/:id_product/report",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								":id_product",
+								"report"
+							],
+							"variable": [
+								{
+									"key": "id_product",
+									"value": "150",
+									"description": "Product ID"
+								}
+							]
+						},
+						"description": "Post a report on a product that violates rules by filling out the required documents according to its violation category.\n\nRequired fields:\n\n- id_user: User ID that files the report\n- id_category: Category ID\n    \n    - 1: \"Pelanggaran HAKI & Produk MLM\"\n    - 2: \"Harga Tidak Wajar\"\n        - sub-category: Select one of the following sub-category ID\n            - 1: \"Indikasi Penipuan\"\n            - 2: \"Harga tidak sesuai standar\"\n            - 3: \"Indikasi manipulasi\"\n        - message: Detailed reason about the violation\n        - imgs: Array of string. Each item would be an image string\n    - 3: \"Produk Dewasa & Pornografi\"\n        - sub-category: Select one of the following sub-category ID\n            - 1: \"Gambar produk sensual\"\n            - 2: \"Obat untuk aktivitas seksual\"\n            - 3: \"Gambar menyerupai alat vital\"\n            - 4: \"Mengandung unsur pornografi\"\n        - message: Detailed reason about the violation\n    - 4: \"Produk Ilegal, Palsu, dan Berbahaya\"\n        - sub-category: Select one of the following sub-category ID\n            - 1: \"Obat, vitamin, atau kosmetik berbahaya\"\n            - 2: \"Materai\"\n            - 3: \"Senjata\"\n            - 4: \"Dokumen resmi\"\n            - 5: \"Minuman beralkohol\"\n            - 6: \"Hewan\"\n            - 7: \"Produk non-fisik\"\n            - 8: \"Tiket pertunjukan\"\n            - 9: \"Produk mistis\"\n            - 10: \"Uang tunai\"\n            - 11: \"Bahan peledak\"\n            - 12: \"Narkotika\"\n        - message: Detailed reason about the violation\n    - 5: \"Salah Kategori\"\n        - message: Detailed reason about the violation\n    - 6: \"Duplikasi Produk Tanpa Izin\n        - message: Detailed reason about the violation\n        - links: Array of string. Each item would be a link reffering to the original product\n    - 7: \"Spam Produk\"\n        - message: Detailed reason about the violation\n        - links: Array of string. Each item would be a link reffering to the identical product\n    - 8: \"Promosi Pihak / Produk Lain\n        - sub-category: Select one of the following sub-category ID\n            - 1: \"Berupa testimoni\"\n            - 2: \"Iklan ke situs / toko lain\"\n            - 3: \"Menawarkan jasa\"\n            - 4: \"Judul tidak relevan\"\n        - message: Detailed reason about the violation\n    - 9: \"Produk Tembakau dan Rokok Relektrik\n        - message: Detailed reason about the violation\n    - 10: \"Label Halal MUI di Produk yang Salah\"\n        - message: Detailed reason about the violation\n    - 11: \"Produk Melebihi Rujuakna Batas Pembelian terkait COVID-19\"\n        - message: Detailed reason about the violation\n    - 12: \"Tidak sesuai untuk Bangga Buatan Indonesia\"\n        - message: Detailed reason about the violation\n    - 13: \"Video Produk Melanggar Syarat dan Ketentuan Tokopedia\n        - message: Detailed reason about the violation\n        - imgs: Array of string. Each item would be an image string\n    - 14: \"Stok Produk Kosong\"\n        - message: Detailed reason about the violation\n        - imgs: Array of string. Each item would be an image string\n    - 15: \"Produk Vitamin, Obat-obatan, atau Alat Kesehatan Palsu\"\n        - message: Detailed reason about the violation\n        - imgs: Array of string. Each item would be an image string\n    - 16: \"Indikasi Manipulasi Berat\"\n        - message: Detailed reason about the violation\n    - 17: \"Pakaian Bekas dan Aksesoris Pakaian Bekas Lainnya\n        \n        - message: Detailed reason about the violation\n            \n- is_data_authentic: Authenticity of input must be true\n    \n\n<img src=\"https://lh7-us.googleusercontent.com/D-oE4IUNbhjZZAf_Q1UFqU96RrzfhLveeMO8bvVGNa6Z5QXnV8epFoEm0dGDFAoADZ7ceg8FojkVqsVh0yW4DmdYepix3RpxltccJ2cfoZkXdJaXzgvYSx_aU8debO1n__WOPF7Esyxxzb-36vM8P-E\" alt=\"\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_user\": 484,\r\n    \"id_category\": 2,\r\n\t\t\"reason\": {\r\n\t\t\t\"message\": \"Standar untuk barang asli dan normal harusnya satu juta lebih murah dari harga sekarang\",\r\n\t\t\t\"sub-category\": 2,\r\n\t\t\t\"links\": [],\r\n\t\t\t\"imgs\": [\r\n\t\t\t\t\"data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\",\r\n\t\t\t\t\"data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\",\r\n\t\t\t\t\"data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"\r\n\t\t\t]\r\n\t\t},\r\n    \"is_data_authentic\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/product/:id_product/report",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										":id_product",
+										"report"
+									],
+									"variable": [
+										{
+											"key": "id_product",
+											"value": "150",
+											"description": "Product ID"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 200,\r\n    \"message\": \"success\"\r\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_user\": 484,\r\n    \"id_category\": 2,\r\n\t\t\"reason\": {\r\n\t\t\t\"message\": \"Standar untuk barang asli dan normal harusnya satu juta lebih murah dari harga sekarang\",\r\n\t\t\t\"sub-category\": 2,\r\n\t\t\t\"links\": [],\r\n\t\t\t\"imgs\": [\r\n\t\t\t\t\"data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\",\r\n\t\t\t\t\"data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\",\r\n\t\t\t\t\"data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"\r\n\t\t\t]\r\n\t\t},\r\n    \"is_data_authentic\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/product/:id_product/report",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"product",
+										":id_product",
+										"report"
+									],
+									"variable": [
+										{
+											"key": "id_product",
+											"value": "150",
+											"description": "Product ID"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 500,\r\n    \"message\": \"internal server error\"\r\n}"
+						}
+					]
+				}
+			],
+			"description": "Endpoints for a product page"
+		},
+		{
+			"name": "Shipment",
+			"item": [
+				{
+					"name": "Add New Address",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receiver_name\": \"Steve\",\r\n    \"no_telephone\": \"08156374928\",\r\n    \"address_label\": \"Kantor\",\r\n    \"address\": \"Jl. Kembar Baru no. 12 Bandung\",\r\n    \"address_province\": 32,\r\n    \"address_country\": 73,\r\n    \"address_district\": 11,\r\n    \"address_postal_code\": 40254,\r\n    \"notes\": \"Pagar hijau\",\r\n    \"pinpoint\": {\r\n        \"latitude\": \"\",\r\n        \"longitude\": \"\"\r\n    },\r\n    \"set_as_primary_address\": true,\r\n    \"is_agree_to_tnc\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/user/:id_user/shipment",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								":id_user",
+								"shipment"
+							],
+							"variable": [
+								{
+									"key": "id_user",
+									"value": "484",
+									"description": "User ID"
+								}
+							]
+						},
+						"description": "Add new shipment address when the user clicks the \"Simpan\" button.\n\nRequired fields:\n\n- receiver_name : Receiver name\n- no_telephone: Receiver telephone number\n- address_label: Address label\n- address: Address name\n- address_province: Address province number\n- address_country: Address country number\n- address_district: Address district number\n- address_postal_code: Address postal code\n- is_agree_to_tnc : Agree to terms and conditions\n    \n\n<img src=\"https://lh7-us.googleusercontent.com/KHDl1JBDuyhyzQNuZ9cu_0VU_PgSkKwoFEi3Qxe_lzcfqLpU0uGzlkV0_JYL0R3oGG9D0gWh0094rIdR85u9MWSPR6PXQvcBJd-t6qoZcKdBfg_byRVgMWph49rS5WCIbs2E1_JT2mw4icCQkkCKaG4\" alt=\"\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"receiver_name\": \"Steve\",\r\n    \"no_telephone\": \"08156374928\",\r\n    \"address_label\": \"Kantor\",\r\n    \"address\": \"Jl. Kembar Baru no. 12 Bandung\",\r\n    \"address_province\": 32,\r\n    \"address_country\": 73,\r\n    \"address_district\": 11,\r\n    \"address_postal_code\": 40254,\r\n    \"notes\": \"Pagar hijau\",\r\n    \"pinpoint\": {\r\n        \"latitude\": \"\",\r\n        \"longitude\": \"\"\r\n    },\r\n    \"set_as_primary_address\": true,\r\n    \"is_agree_to_tnc\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/user/:id_user/shipment",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										":id_user",
+										"shipment"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "484",
+											"description": "User ID"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 200,\r\n    \"message\": \"success\"\r\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"receiver_name\": \"Steve\",\r\n    \"no_telephone\": \"08156374928\",\r\n    \"address_label\": \"Kantor\",\r\n    \"address\": \"Jl. Kembar Baru no. 12 Bandung\",\r\n    \"address_province\": 32,\r\n    \"address_country\": 73,\r\n    \"address_district\": 11,\r\n    \"address_postal_code\": 40254,\r\n    \"notes\": \"Pagar hijau\",\r\n    \"pinpoint\": {\r\n        \"latitude\": \"\",\r\n        \"longitude\": \"\"\r\n    },\r\n    \"set_as_primary_address\": true,\r\n    \"is_agree_to_tnc\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/user/:id_user/shipment",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										":id_user",
+										"shipment"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "484",
+											"description": "User ID"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 500,\r\n    \"message\": \"internal server error\"\r\n}"
+						}
+					]
+				}
+			],
+			"description": "Endpoints for managing user's shipments"
+		},
+		{
+			"name": "All About Seller",
+			"item": [
+				{
+					"name": "Get Seller Account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/seller/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"seller",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "484"
+								}
+							]
+						},
+						"description": "The 'Get Seller Account' API retrieves the account information of a seller based on the provided seller ID. By sending a GET request to the endpoint with the seller's unique identifier as a parameter, users can access details such as the seller's username, role, delivery address, current balance, and any credit for top advertisements. This API facilitates the retrieval of seller account data, enabling seamless integration with e-commerce platforms and applications.\n\n<img src=\"https://lh7-us.googleusercontent.com/BrFWtFzCOAK7iQHf8ji3IwrlMCR71E2CrQH1jmR5-rNDJ0MYIhnrHG2dW99pfJ4ZTweLyCjKvhkXqAdTsnT14aR0UFWQDXpj2T74lc4ZIYhUGYzWBi18AiWZMKKkwfhMeDJvh4Ia6WlsI2ge_IZuqWc\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/api/seller/:id",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"seller",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 200,\r\n    \"id\": \"292382\",\r\n    \"username\": \"Dipatiukur Shop\",\r\n    \"role\": \"Reguler Merchant\",\r\n    \"deliveryAddress\": \"Jalan Dipatiukur\",\r\n    \"saldo\": 0,\r\n    \"kredit_topAds\": 0\r\n}\r\n"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/seller/:id",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"seller",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"error\": \"Account not found\"\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/seller/:id",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"seller",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"message\": \"internal server error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/seller/:id/allProducts",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"seller",
+								":id",
+								"allProducts"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "The 'Get All Product' API allows users to retrieve all products associated with a specific seller by providing the seller's unique identifier as a parameter. By sending a GET request to the endpoint with the seller ID, users can obtain a comprehensive list of products offered by the seller, including details such as product names, categories, prices, availability, and other relevant information. This API facilitates the seamless retrieval of product data for a particular seller, enabling integration with various e-commerce platforms and applications.\n\n<img src=\"https://content.pstmn.io/00620b10-c6e1-4474-ad44-c799f6f40191/aW1hZ2UucG5n\" width=\"1012\" height=\"440\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/api/seller/:id/allProducts",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"seller",
+										":id",
+										"allProducts"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"seller_id\": \"123\",\n    \"products\": [\n        {\n            \"id\": \"1\",\n            \"product_name\": \"Electric Cars\",\n            \"category\": \"toys\",\n            \"price\": 100000,\n            \"product_status\": \"active\",\n            \"stock\": 10\n        },\n        {\n            \"id\": \"2\",\n            \"product_name\": \"Feastables\",\n            \"category\": \"food\",\n            \"price\": 50000,\n            \"product_status\": \"active\",\n            \"stock\": 20\n        },\n        {\n            \"id\": \"3\",\n            \"product_name\": \"Flippable Chair\",\n            \"category\": \"furniture\",\n            \"price\": 200000,\n            \"product_status\": \"inactive\",\n            \"stock\": 5\n        }\n    ]\n}\n"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/seller/:id/allProducts",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"seller",
+										":id",
+										"allProducts"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"error\": \"Resource not found\"\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/seller/:id/allProducts",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"seller",
+										":id",
+										"allProducts"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"error\": \"Internal server error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit Seller Account",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/seller/:id/edit?username=&address&slogan&store_description",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"seller",
+								":id",
+								"edit"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": ""
+								},
+								{
+									"key": "address",
+									"value": null
+								},
+								{
+									"key": "slogan",
+									"value": null
+								},
+								{
+									"key": "store_description",
+									"value": null
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "484"
+								}
+							]
+						},
+						"description": "The 'Edit Seller Account' API enables users to update the account information of a seller by specifying the seller's unique identifier as a parameter. By sending a PUT request to the endpoint with the seller ID, users can modify various aspects of the seller's account, such as username, delivery address, contact information, or any other relevant details. This API empowers users to seamlessly manage and update seller account information, facilitating smooth operation and customization within e-commerce platforms and applications.  \n\n<img src=\"https://lh7-us.googleusercontent.com/5O8C_xdDh-P5vlbIUlAVkGTW9w9dJygG9Ywk-mn2SLl3KF_IdFPTPBfLNvMPC3LQlXBRNTqOE9fcqJYLgXUrvAjmmmhd3UbhP_A_iGnC-8CzNC5n5N5x6QQzo0-wQ3sfJxKH7VHSQGkZzlaD19kMQOo\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"new_username\",\r\n    \"address\": \"new_address\",\r\n    \"slogan\": \"new_slogan\",\r\n    \"store_description\": \"new_store_description\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/seller/:id/editProfile?username=Dipatiukur Shop&address=Jalan Dipatiukur&slogan=Semakin besar, semakin baik&store_description=Serabutan",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"seller",
+										":id",
+										"editProfile"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "Dipatiukur Shop",
+											"description": "new username for the shop"
+										},
+										{
+											"key": "address",
+											"value": "Jalan Dipatiukur",
+											"description": "location of the shop"
+										},
+										{
+											"key": "slogan",
+											"value": "Semakin besar, semakin baik",
+											"description": "the shop's slogan"
+										},
+										{
+											"key": "store_description",
+											"value": "Serabutan",
+											"description": "the shop's description"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484",
+											"description": "seller's id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"User account updated successfully\"\n}\n"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/seller/:id/editProfile?username=DU Shop&address=Jalan Dipatiukur&slogan=Semakin besar, semakin baik&store_description=Serabutan",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"seller",
+										":id",
+										"editProfile"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "DU Shop",
+											"description": "username \"DU Shop\" incorrect, should be \"Dipatiukur Shop\", therefore not found."
+										},
+										{
+											"key": "address",
+											"value": "Jalan Dipatiukur",
+											"description": "location of the shop"
+										},
+										{
+											"key": "slogan",
+											"value": "Semakin besar, semakin baik",
+											"description": "the shop's slogan"
+										},
+										{
+											"key": "store_description",
+											"value": "Serabutan",
+											"description": "the shop's description"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484",
+											"description": "seller's id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"error\": \"Resource not found\"\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/seller/:id/edit",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"seller",
+										":id",
+										"edit"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"error\": \"Internal server error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Insert Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/seller/:id/products",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"seller",
+								":id",
+								"products"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "484"
+								}
+							]
+						},
+						"description": "The 'Insert Product' API allows users to add a new product to the platform's inventory. By sending a POST request to the designated endpoint, users can provide the necessary product details, including name, category, price, availability, and any additional information. This API facilitates the seamless addition of new products to the platform, enabling sellers to expand their offerings and providing customers with a wider selection of goods.\n\n<img src=\"https://lh7-us.googleusercontent.com/4QdI6mXKvChEQgLuq4fpqfa7cbUv4kK2PPJqB_l9_5bI7WRcBEGJlkxSEdOkMRfAnl9_hVRfvG_kdjvwxVQdYSlA8PCmJRMYKrK3Gh5qQQelbUcwqbfmwp89_n06DNQhUFepuGaN3ueKX_E5sN9F0t4\">\n\n<img src=\"https://lh7-us.googleusercontent.com/3Umf4XMvIlPRbfVyI0__Qk1AIE3i_ND2jipkRTraZk1NSw-d7533Me3Nysg1SnV01a8rw8h5doT3O4lQ1EFl0VeY21A2_K55hM9M9woti99SGauBWH6MjIEB4glxSkpkaRFYsUg6N1wEA9GEZcXnD48\">\n\n<img src=\"https://lh7-us.googleusercontent.com/Cr_MoiqiRCmqY78wbqkHZS5CbhdXZV34fncX9YzKlzEn0vk8v8L0oJFnjQyCG5i7BrGXeTbOprPMMBFLsodYe_ENeIHHptkQLWAXHIT1Hiw4xB8mjO-pZ7NB3txIxUwbYIwWdPN1B7nMFRgt_BzGeXs\">\n\n<img src=\"https://lh7-us.googleusercontent.com/LuoaJBNUQZK4xkPtMya0euXDTBKNflHEbw9-_EYGQRcYYhRtADlJbUgosE8tKXVMWq6QVJc5yvyYYEsSZizz8NYwHFpZGz2ri-Qm5tRFgLO4_Feq3STb3ZKN5VHUaWZEOxXpV55KSNctdQ-XkcM7p1I\">\n\n<img src=\"https://lh7-us.googleusercontent.com/ywj6q4gbAlKAGiMuyC4jJQJWw48XXqx-hh6JXXkT9cG3kFXRL_nLifEkksU82mKfZv3fIfMt4II0OFw6YfIVQw7V14sIWQnh6T4Np6NepgBAPg6FvisR9jZfwgHnBoue-cJlVs1tdPNmAhJZDrUbg4A\">\n\n<img src=\"https://lh7-us.googleusercontent.com/Ka6nA-goOFgIjQi85OCgRqPIUtEhcAOOKAbcwWWCv8l9SQq0OTltJPR2BZdfn4f6_QaApMwa4IRIEfB33PpR-qHhJM3uqF4X5u_9KYI7x_kV4BUPN-VRrzLozXtA5jLkvt4eK_xI8qmbNOFIoOkNeik\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product\": {\r\n        \"id\": 1,\r\n        \"product_name\": \"Product Name\",\r\n        \"category\": \"Toys\",\r\n        \"display\": \"Display 1\",\r\n        \"photos\": [\r\n            \"photo_url1\",\r\n            \"photo_url2\",\r\n            \"photo_url3\"\r\n        ],\r\n        \"condition\": \"new\",\r\n        \"description\": \"Product Description\",\r\n        \"video_url\": \"video_url\",\r\n        \"price\": 100000,\r\n        \"product_status\": \"active\",\r\n        \"stock\": 10,\r\n        \"weight\": 1.5,\r\n        \"dimensions\": {\r\n            \"length\": 10,\r\n            \"width\": 5,\r\n            \"height\": 8\r\n        },\r\n        \"shipping_insurance\": \"standard\"\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/seller/:id/products",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"seller",
+										":id",
+										"products"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484",
+											"description": "seller's id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Product added successfully\"\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama_barang\": \"Nama Barang\",\r\n    \"kategori\": \"mainan\",\r\n    \"etalase\": \"etalase1\",\r\n    \"foto\": [\"url_foto1\", \"url_foto2\", \"...\"],\r\n    \"kondisi\": \"baru\",\r\n    \"deskripsi_barang\": \"Deskripsi Barang\",\r\n    \"url_video_produk\": \"url_video\",\r\n    \"harga\": 100000,\r\n    \"status_produk\": \"aktif\",\r\n    \"stock_produk\": 10,\r\n    \"berat_produk\": 1.5,\r\n    \"ukuran_produk\": {\r\n        \"panjang\": 10,\r\n        \"lebar\": 5,\r\n        \"tinggi\": 8\r\n    },\r\n    \"asuransi_pengiriman\": \"standar\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/seller/:id/products",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"seller",
+										":id",
+										"products"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484",
+											"description": "seller's id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"error\": \"Product creation failed: Product not found\"\n}\n"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product\": {\r\n        \"id\": 1,\r\n        \"product_name\": \"Product Name\",\r\n        \"category\": \"Toys\",\r\n        \"display\": \"Display 1\",\r\n        \"photos\": [\r\n            \"photo_url1\",\r\n            \"photo_url2\",\r\n            \"photo_url3\"\r\n        ],\r\n        \"condition\": \"new\",\r\n        \"description\": \"Product Description\",\r\n        \"video_url\": \"video_url\",\r\n        \"price\": 100000,\r\n        \"product_status\": \"active\",\r\n        \"stock\": 10,\r\n        \"weight\": 1.5,\r\n        \"dimensions\": {\r\n            \"length\": 10,\r\n            \"width\": 5,\r\n            \"height\": 8\r\n        },\r\n        \"shipping_insurance\": \"standard\"\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/seller/:id/products",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"seller",
+										":id",
+										"products"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484",
+											"description": "seller's id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"error\": \"Internal server error\"\n}\n"
+						}
+					]
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/seller/:id/products",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"seller",
+								":id",
+								"products"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "seller's id"
+								}
+							]
+						},
+						"description": "The 'Delete Product' API enables users to remove a product from the platform's inventory. By sending a DELETE request to the specified endpoint with the product's unique identifier as a parameter, users can initiate the deletion process. This API provides a streamlined method for sellers or administrators to manage their product listings, ensuring accuracy and relevance in the platform's catalog.  \n\n<img src=\"https://lh7-us.googleusercontent.com/DaWZUrN5A1wRWql1KKSgq8gXqIUwi4pKPq9gkhwmjgGETF3smWh5P6cnxHbAYl8OV3JcJBFw41BZE3bwk7phipCPqAGNMp7i2CaJc68uCLiWG64kRnlTejgS2X6i5zN-EcSqd40ND1xGk1Whf7Azye0\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/seller/:id/products",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"seller",
+										":id",
+										"products"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484",
+											"description": "seller's id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Product succesfully deleted\"\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/seller/:id/products",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"seller",
+										":id",
+										"products"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484",
+											"description": "seller's id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"Product deletion failed\"\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/seller/:id/products",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"seller",
+										":id",
+										"products"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "484",
+											"description": "seller's id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"message\": \"Internal Server Error\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Get All Transaction",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{api_url}}/api/user/:id_user/transaction?sort=\"descending\"&retrieve-all=true&filter[status]=\"semua\"&filter[product_type]=\"semua produk\"&filter[transaction_date]=[]&filter[search]=[]",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								":id_user",
+								"transaction"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "\"descending\"",
+									"description": "By default, transactions are sorted in descending order. And can optionally specify \"ascending\" to sort transactions in ascending order."
+								},
+								{
+									"key": "retrieve-all",
+									"value": "true",
+									"description": "Retrieve all the transaction data"
+								},
+								{
+									"key": "filter[status]",
+									"value": "\"semua\"",
+									"description": "Filtering by transaction status : semua (default), berlangsung, berhasil, tidak berhasil, e-tiket & e-voucher aktif"
+								},
+								{
+									"key": "filter[product_type]",
+									"value": "\"semua produk\"",
+									"description": "Filtering by product type : semua produk (default), belanja, top-up & tagihan, travel & entertainment, keuangan, PLUS, Tokopedia NOW!, GoFood, Lainnya."
+								},
+								{
+									"key": "filter[transaction_date]",
+									"value": "[]",
+									"description": "Filtering by transaction date"
+								},
+								{
+									"key": "filter[search]",
+									"value": "[]",
+									"description": "Filtering by search key"
+								}
+							],
+							"variable": [
+								{
+									"key": "id_user",
+									"value": ""
+								}
+							]
+						},
+						"description": "This request retrieves all transactions for a specific user with ID \"user123\". It's made to the `/api/user/:id_user/transaction` endpoint, where `:id_user` is replaced with the user ID. The server responds with all transactions associated with the user, sorted in descending order by default. All transactions are included without any filtering based on status, product type, transaction date, or search criteria.\n\n<img src=\"https://lh7-us.googleusercontent.com/wWxxqUYXR2yARsLIVPp0Fn8Xxr_mzOvrGaHo7dMqHtfuxHwUBGCCVBDJTYk27edq29NGUmaANL_cmGDv_dUPjJvLJL8t4P3eRrUp7NwzBI9fICiQqWyn9J1AWKA8-wzmKgj5e9PP_ipeH2OiRKwmW5k\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/user/:id_user/transaction?sort=\"descending\"&retrieve-all=true&filter[status]=\"semua\"&filter[product_type]=\"semua produk\"&filter[transaction_date]=[]&filter[search]=[]",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										":id_user",
+										"transaction"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "\"descending\"",
+											"description": "By default, transactions are sorted in descending order. And can optionally specify \"ascending\" to sort transactions in ascending order."
+										},
+										{
+											"key": "retrieve-all",
+											"value": "true",
+											"description": "Retrieve all the transaction data"
+										},
+										{
+											"key": "filter[status]",
+											"value": "\"semua\"",
+											"description": "Filtering by transaction status : semua (default), berlangsung, berhasil, tidak berhasil, e-tiket & e-voucher aktif"
+										},
+										{
+											"key": "filter[product_type]",
+											"value": "\"semua produk\"",
+											"description": "Filtering by product type : semua produk (default), belanja, top-up & tagihan, travel & entertainment, keuangan, PLUS, Tokopedia NOW!, GoFood, Lainnya."
+										},
+										{
+											"key": "filter[transaction_date]",
+											"value": "[]",
+											"description": "Filtering by transaction date"
+										},
+										{
+											"key": "filter[search]",
+											"value": "[]",
+											"description": "Filtering by search key"
+										}
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "21"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 200,\r\n    \"message\": \"success\",\r\n    \"transactions\": [\r\n        {\r\n            \"product_type\": \"Uang Elektronik\",\r\n            \"transaction_date\": \"2024-04-21T19:21:00Z\",\r\n            \"transaction_status\": \"Berhasil\",\r\n            \"invoice\": \"IVR/20240412/XXIV/IV/2025447993\",\r\n            \"product_name\": \"BCA Flazz Rp 20.000\",\r\n            \"destination_number\": 01450142000769823\r\n        \"amount\": 21500.00\r\n        },\r\n        {\r\n            \"product_type\": \"Pulsa\",\r\n            \"transaction_date\": \"2024-1-21T09:21:00Z\",\r\n            \"transaction_status\": \"Berhasil\",\r\n            \"invoice\": \"IVR/20240321/XXIV/III/1994462964\",\r\n            \"product_name\": \"Tri 10.000\",\r\n            \"destination_number\": 0895282197868\r\n        \"amount\": 11500.00\r\n        },\r\n    ]\r\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/user/:id_user/transaction?sort=\"descending\"&retrieve-all=true&filter[status]=\"semua\"&filter[product_type]=\"semua produk\"&filter[transaction_date]=[]&filter[search]=[]",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										":id_user",
+										"transaction"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "\"descending\"",
+											"description": "By default, transactions are sorted in descending order. And can optionally specify \"ascending\" to sort transactions in ascending order."
+										},
+										{
+											"key": "retrieve-all",
+											"value": "true",
+											"description": "Retrieve all the transaction data"
+										},
+										{
+											"key": "filter[status]",
+											"value": "\"semua\"",
+											"description": "Filtering by transaction status : semua (default), berlangsung, berhasil, tidak berhasil, e-tiket & e-voucher aktif"
+										},
+										{
+											"key": "filter[product_type]",
+											"value": "\"semua produk\"",
+											"description": "Filtering by product type : semua produk (default), belanja, top-up & tagihan, travel & entertainment, keuangan, PLUS, Tokopedia NOW!, GoFood, Lainnya."
+										},
+										{
+											"key": "filter[transaction_date]",
+											"value": "[]",
+											"description": "Filtering by transaction date"
+										},
+										{
+											"key": "filter[search]",
+											"value": "[]",
+											"description": "Filtering by search key"
+										}
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "99999999999"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"user not found\"\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/user/:id_user/transaction?sort=\"descending\"&retrieve-all=true&filter[status]=\"semua\"&filter[product_type]=\"semua produk\"&filter[transaction_date]=[]&filter[search]=[]",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										":id_user",
+										"transaction"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "\"descending\"",
+											"description": "By default, transactions are sorted in descending order. And can optionally specify \"ascending\" to sort transactions in ascending order."
+										},
+										{
+											"key": "retrieve-all",
+											"value": "true",
+											"description": "Retrieve all the transaction data"
+										},
+										{
+											"key": "filter[status]",
+											"value": "\"semua\"",
+											"description": "Filtering by transaction status : semua (default), berlangsung, berhasil, tidak berhasil, e-tiket & e-voucher aktif"
+										},
+										{
+											"key": "filter[product_type]",
+											"value": "\"semua produk\"",
+											"description": "Filtering by product type : semua produk (default), belanja, top-up & tagihan, travel & entertainment, keuangan, PLUS, Tokopedia NOW!, GoFood, Lainnya."
+										},
+										{
+											"key": "filter[transaction_date]",
+											"value": "[]",
+											"description": "Filtering by transaction date"
+										},
+										{
+											"key": "filter[search]",
+											"value": "[]",
+											"description": "Filtering by search key"
+										}
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "21"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"message\": \"An unexpected error occurred while processing your request. Please try again later.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Detail Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/user/:id_user/order_detail/:invoice",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								":id_user",
+								"order_detail",
+								":invoice"
+							],
+							"variable": [
+								{
+									"key": "id_user",
+									"value": "",
+									"description": "User ID"
+								},
+								{
+									"key": "invoice",
+									"value": "",
+									"description": "Invoice Number"
+								}
+							]
+						},
+						"description": "This request retrieves the order detail for a specific user with ID and a particular invoice number . The request is made to the `/api/user/:id_user/order_detail/:invoice` endpoint, where `:id_user` is replaced with the user ID and `:invoice` is replaced with the invoice number. The server responds with detailed information about the order, including transaction status, transaction date, product type, product name, payment details, destination number, amount, payment method, and total payment.\n\n<img src=\"https://lh7-us.googleusercontent.com/dnK_rVIG_Pgfnlzkzcsfzh48Af8AxGlT64ou0sWWUTKOGe9HE5anREHUYkt12DXKExW4bZy-hpZY6KV4wPE9n8hMxBORAOM2fNdQzx4-zsnRGC2_N1kgh_rp9ngY-8SG1XGgPvCijIvPS5CiE6FQUrg\" alt=\"\">\n\n<img src=\"https://lh7-us.googleusercontent.com/DCczU2-GJe8OAyTUNlAa_KUoIVogbx28Rx-Q3SgTrJfZwWLrbx43QXrwksk7ifiT7xtlDvbyW0JAPmhU1e_0Tmr_sCwH-W3bFgKDHeD5P5vxR0pqP6Lhb7a9_YHDI55IroDCQYT5fswqR_aXANA6uO4\" alt=\"\">"
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/user/:id_user/order_detail/:invoice",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										":id_user",
+										"order_detail",
+										":invoice"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "21",
+											"description": "User ID"
+										},
+										{
+											"key": "invoice",
+											"value": "IVR/20240412/XXIV/IV/2025447993",
+											"description": "Invoice Number"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"order_detail\": {\n        \"invoice\": \"IVR/20240412/XXIV/IV/2025447993\",\n        \"transaction_status\": \"Transaksi Berhasil\",\n        \"user_id\": \"21\",\n        \"transaction_date\": \"2024-04-21T19:21:00Z\",\n        \"product_type\": \"Uang Elektronik\",\n        \"product_name\": \"BCA Flazz Rp 20.000\",\n        \"product_payment\": \"TOPUP PREPAID\",\n        \"adminfee\": 1500,\n        \"destination_number\": \"01450142000769823\",\n        \"amount\": 20000,\n        \"payment_method\": \"OVO\",\n        \"ewallet\": 21500,\n        \"total_payment\": 21500\n    }\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/user/:id_user/order_detail/:invoice",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										":id_user",
+										"order_detail",
+										":invoice"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "21",
+											"description": "User ID"
+										},
+										{
+											"key": "invoice",
+											"value": "0000000000",
+											"description": "Invoice Number"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"invoice not found\"\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_url}}/api/user/:id_user/order_detail/:invoice",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										":id_user",
+										"order_detail",
+										":invoice"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": "21",
+											"description": "User ID"
+										},
+										{
+											"key": "invoice",
+											"value": "IVR/20240412/XXIV/IV/2025447993",
+											"description": "Invoice Number"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"message\": \"An unexpected error occurred while processing your request. Please try again later.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Settings",
+			"item": [
+				{
+					"name": "Add Chat Template",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/:id_user/settings/chat/template",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								":id_user",
+								"settings",
+								"chat",
+								"template"
+							],
+							"variable": [
+								{
+									"key": "id_user",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"template\": \"Apakah produk masih ada?\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/:id_user/settings/chat/template",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										":id_user",
+										"settings",
+										"chat",
+										"template"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 200,\r\n    \"message\": \"Chat template added successfully.\",\r\n    \"template\": {\r\n        \"id\": 123,\r\n        \"message\": \"Hello! How can we assist you today?\"\r\n    }\r\n}"
+						},
+						{
+							"name": "500",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/api/:id_user/settings/chat/template",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"api",
+										":id_user",
+										"settings",
+										"chat",
+										"template"
+									],
+									"variable": [
+										{
+											"key": "id_user",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"message\": \"An unexpected error occurred while processing your request. Please try again later.\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api_url",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}
